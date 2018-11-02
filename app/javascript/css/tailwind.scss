@@ -1,0 +1,16 @@
+@tailwind preflight;
+@tailwind components;
+
+// Cuztomize tailwind utilities here:
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+
+@tailwind utilities;
