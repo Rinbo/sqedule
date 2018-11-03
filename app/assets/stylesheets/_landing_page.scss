@@ -16,7 +16,8 @@
 
 }
 
-.masthead-text  {  color: #fefefe;  
+.masthead-text  {  
+  color: #fefefe;  
   width: 100vw;
   text-align: center;
   text-transform: uppercase;
@@ -70,6 +71,7 @@
     text-decoration: none;
     padding: 5px;
     border-radius: 4px;
+    font-weight: bold;
   }
 
   a:visited {
