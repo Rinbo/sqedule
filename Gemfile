@@ -28,6 +28,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'devise'
 end
 
 group :development do
