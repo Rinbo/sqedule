@@ -1,52 +1,42 @@
 .masthead {
-  background-image: image_url("landing_page_2.jpg");
-  background-position: center center;
-  background-size: cover;
   height: 100vh;
   width: 100vw;
+  position: fixed;
   top: 0;
   left: 0;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; 
-    background-color: rgba(0,0,0,0.5);
-  }
-}
+  z-index: -1;
+  background:     
+    linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),    
+    image_url("landing_page_2.jpg");
+  background-position: center center;
+  background-size: cover;
 
-.top-layer {
-  position: absolute;
-  width: 100vh;
 }
 
 .masthead-text  {  color: #fefefe;  
   width: 100vw;
   text-align: center;
   text-transform: uppercase;
-  position: absolute;
-  margin: 0;
 }
 
 .heading {
+  margin-top: 20vh;
   background: rgba(0,0,0,0.5);
-  font-size: 9rem;
-  top: 20vh;
+  font-size: 9rem;  
 }
 
 .sub-heading {
   font-size: 2rem;  
-  top: 40vh;
   width: 24vw;
-  left: 38vw;
+  margin: 50px auto;
 }
 
 .sign-up {
-  font-size: 2rem;
-  top: 55vh;
-  left: 46vw;
+  font-size: 2rem;  
   width: 8vw;
+  margin: 50px auto;
   display: block;
 }
