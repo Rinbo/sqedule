@@ -1,0 +1,33 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/models/user.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/jobs/application_job.rb": [
+        0,
+        0
+      ]
+    },
+    "timestamp": 1541277511
+  }
+}

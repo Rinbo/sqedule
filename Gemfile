@@ -29,6 +29,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'devise'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
 end
 
 group :development do
