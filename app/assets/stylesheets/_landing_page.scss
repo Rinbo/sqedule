@@ -25,7 +25,8 @@
 .heading {
   margin-top: 20vh;
   background: rgba(0,0,0,0.5);
-  font-size: 9rem;  
+  font-size: 9rem;
+  font-weight: normal;
 }
 
 .sub-heading {
@@ -39,4 +40,50 @@
   width: 8vw;
   margin: 50px auto;
   display: block;
+}
+
+.landing-nav {
+  position: fixed;
+  height: 50px;
+  left: 0;
+  top: 0;
+}
+
+.login {
+  top: 15px;
+  left: 80vw;
+  font-size: 1rem;  
+  width: 6vw;  
+  display: block;
+  position: absolute;
+}
+
+.footer {
+  height: 50px;
+  font-size: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #fefefe;
+  a {
+    color: #fefefe;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+  }
+
+  a:visited {
+    color: #fefefe;
+  }
+  a:hover {
+    color: rgb(39, 38, 38);
+    background-color: white;
+  }
+}
+
+.f-section {
+  margin: 0;
+  width: 33vw;
+  line-height: 50px;
+  text-align: center;
 }
