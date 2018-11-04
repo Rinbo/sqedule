@@ -1,17 +1,10 @@
-.grid-item {
-    height: 45%;  
-    width: 90%
-  }
-  
 .staff { 
     grid-area: staff;   
     overflow: scroll;
     display: grid;
     justify-content: center;
     align-content: start;
-    h1 {
-    margin: 20px;
-    }
+    border: 1px solid black;
 }
 
 .assignments { 
@@ -20,9 +13,7 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    h1 {
-        margin: 20px;
-    }
+    border: 1px solid black;
 }
 
 .shift-patterns { 
@@ -31,31 +22,28 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    h1 {
-        margin: 20px;
-    }
+    border: 1px solid black;
 }
 
-.shift {
-    grid-area: shift;   
+.shifts {
+    grid-area: shifts;   
     overflow: scroll;
     display: grid;
     justify-content: center;
     align-content: start;
-    h1 {
-        margin: 20px;
-    }
+    border: 1px solid black;
 }
 
 .grid-container {
     display: grid;
     height: 90vh;
-    grid-gap: 30px;
+    grid-row-gap: 25px;
+    grid-column-gap: 5px;
     margin: 20px 70px;
     padding: 5px;
     grid-template-columns: 25% 75%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
     'staff assignments'
-    'shift-patterns shift';
+    'shift-patterns shifts';
 }
