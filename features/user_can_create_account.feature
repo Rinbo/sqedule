@@ -5,8 +5,8 @@ Feature: User creates account
     I would like to create an account.
 
     Scenario: Successfull registration as a new store manager
-        # Given I am on the landing page     
-        # And I click on the "Signup" button
+        Given I visit the landing page     
+        And I click on the "Sign up" button
         Then I am on the Sign up page
         And I fill in "Email" with "email@email.com"
         And I fill in "Password" with "password"
