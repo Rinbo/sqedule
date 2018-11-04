@@ -1,0 +1,61 @@
+.grid-item {
+    height: 45%;  
+    width: 90%
+  }
+  
+.staff { 
+    grid-area: staff;   
+    overflow: scroll;
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    h1 {
+    margin: 20px;
+    }
+}
+
+.assignments { 
+    grid-area: assignments;   
+    overflow: scroll;
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    h1 {
+        margin: 20px;
+    }
+}
+
+.shift-patterns { 
+    grid-area: shift-patterns;   
+    overflow: scroll;
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    h1 {
+        margin: 20px;
+    }
+}
+
+.shift {
+    grid-area: shift;   
+    overflow: scroll;
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    h1 {
+        margin: 20px;
+    }
+}
+
+.grid-container {
+    display: grid;
+    height: 90vh;
+    grid-gap: 30px;
+    margin: 20px 70px;
+    padding: 5px;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    'staff assignments'
+    'shift-patterns shift';
+}
