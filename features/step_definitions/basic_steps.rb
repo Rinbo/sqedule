@@ -21,3 +21,7 @@ end
 Then("stop") do
     save_and_open_page
 end
+
+Given("I visit the landing page") do
+  visit root_path
+end
