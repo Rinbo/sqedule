@@ -21,3 +21,13 @@ end
 Then("I am on the landing page") do
     visit root_path
 end
+
+Given("the following user is registered") do |table|
+    table.hashes.each do |user|
+      create(:user, user)
+    end
+end
+  
+Then("I am on the Log in page") do
+    visit new_user_session_path
+end

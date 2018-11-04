@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/albertstjarne/CA/sqedule/app/models/user.rb": [
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/models/user.rb": [
         1,
         null,
         null,
@@ -10,31 +10,31 @@
         null,
         null
       ],
-      "/Users/albertstjarne/CA/sqedule/app/models/application_record.rb": [
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/albertstjarne/CA/sqedule/app/controllers/landing_page_controller.rb": [
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/controllers/landing_page_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/albertstjarne/CA/sqedule/app/controllers/application_controller.rb": [
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/controllers/application_controller.rb": [
         1,
         null
       ],
-      "/Users/albertstjarne/CA/sqedule/app/helpers/application_helper.rb": [
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/albertstjarne/CA/sqedule/app/jobs/application_job.rb": [
+      "/Users/danmalmx/CraftAcademy/Final-Project/sqedule/sqedule/app/jobs/application_job.rb": [
         0,
         0
       ]
     },
-    "timestamp": 1541330008
+    "timestamp": 1541330825
   },
   "RSpec": {
     "coverage": {
