@@ -18,7 +18,7 @@ Given("I visit the landing page") do
   visit root_path
 end
 
-Then("I am on the landing page") do
+Then("I end up on the landing page") do
     expect(current_path).to eq root_path    
 end
 
