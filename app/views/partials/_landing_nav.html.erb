@@ -1,5 +1,9 @@
-<nav class="landing-nav">
+<%# <nav class="landing-nav">
   <form action="/users/sign_in" method="get">
     <button class="btn btn-white masthead-text login">Login</button>
   </form>
+</nav> %>
+
+<nav class="landing-nav">
+  <%= link_to 'Login', new_user_session_path, remote: true, class: "btn btn-white masthead-text login" %>
 </nav>
