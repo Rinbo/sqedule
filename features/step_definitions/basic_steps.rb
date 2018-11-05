@@ -15,7 +15,7 @@ Then("stop") do
 end
 
 Given("I visit the landing page") do
-  visit root_path
+    visit root_path
 end
 
 Then("I end up on the landing page") do
