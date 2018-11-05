@@ -8,7 +8,25 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @planning_period = PlanningPeriod.find(params[:id])
+    @schedule = Schedule.find(params[:id])
   end
+
+  def create
+    @schedule = current_user.schedules.create(schedule_params)
+    if @schedule.persisted?
+      redirect_to @schedule
+      flash[:notice] = "New schedule successfully created"
+    else
+      render :new
+      flash[:notice] = "Something went wrong"
+    end
+  end
+
+  private
+
+  def schedule_params
+    params.require(:schedule).permit(:period)
+  end
+
   
 end

@@ -27,6 +27,7 @@ Feature: Schedule model
 
   Scenario: User visits schedule page and creates a schedule
     When I click "New Schedule"
-    And I fill in "Period" with "01-2018" 
+    And I fill in "Period" with "01-2018"
+    And I click on the "Create Schedule" button
     Then I should see "New schedule successfully created"
    
