@@ -13,7 +13,7 @@ Feature: User creates account
         And I fill in "Password confirmation" with "password" 
         And I click on the "Sign up" button
         Then I am on the landing page 
-        And I see the message "Welcome! You have signed up successfully."
+        And I should see "Welcome! You have signed up successfully."
 
     Scenario: User enters wrong password in password confirmation [Sad path]
         Given I am on the Sign up page
