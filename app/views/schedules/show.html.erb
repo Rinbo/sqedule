@@ -3,15 +3,14 @@
   <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
   <div class="staff sqedule-border"><%= render 'partials/staff' %></div>
   <div class="shift-patterns sqedule-border">
-    <%= render partial: 'new_pattern' %>
     <% @schedule.patterns.each do |pattern|%>
-      <div class="pattern sqedule-border ">
+      <div class="pattern sqedule-border">
         <p>Start Time: <%= pattern.shift_start %></p>
         <p>Length: <%= pattern.shift_length %></p>
-        <p>Requirements: <%= pattern.cleaning %></p>
+        <p>Cleaning: <%= pattern.cleaning %></p>
       </div>      
     <% end %>
-    <div class="pattern"><%= render partial: 'new_pattern' %></div>
+    <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
   </div>
   <div class="assignments sqedule-border"><%= render 'partials/assignments' %></div>
   <div class="shifts sqedule-border"><%= render 'partials/shifts' %></div>

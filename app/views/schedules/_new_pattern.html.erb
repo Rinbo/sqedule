@@ -9,16 +9,16 @@
     <%= form.number_field :shift_length, class: "pattern-input" %>
   </div>
   <div class="field">
-    <%= form.label :break %>
-    <%= form.number_field :break, class: "pattern-input" %>
+    <%= form.label :break_length %>
+    <%= form.number_field :break_length, class: "pattern-input" %>
   </div>
   <div class="field">
     <%= form.label :cleaning %>
-    <%= form.check_box :requirements, class: "pattern-input" %>
+    <%= form.check_box :requirements, class: "pattern-checkbox" %>
   </div>
 
   <div class="field">
-    <p></P>
-    <%= form.submit value: "Create pattern", class: "pattern-input" %>
+    <p></p>
+    <%= form.submit value: "Create pattern", class: "btn btn-blue" %>
   </div>
 <% end %>
