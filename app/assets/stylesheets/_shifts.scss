@@ -1,5 +1,14 @@
 .shift {
-  background-color: lightblue;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }  
+}
+.shift:hover {
+  transform: scale(1.05);
 }
 
 .shift-grid {
@@ -7,5 +16,6 @@
   padding-left: 10px;
   display: grid;
   height: 10vh;
-  grid-template-columns: repeat(auto-fill, 3.2%);
+  grid-template-columns: repeat(auto-fill, 3.1%);
+  grid-gap: 1px;
 }
