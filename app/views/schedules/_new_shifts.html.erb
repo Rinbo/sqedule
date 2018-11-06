@@ -1,6 +1,6 @@
 <% pattern.shifts.each do |shift| %>
   <div class="shift">
     <%= shift.date %>
-    <%= link_to "+", planning_period_shift_pattern_shift_path(@schedule, pattern, shift) %>
+    <%= link_to "+", schedule_pattern_shift_path(@schedule, pattern, shift) %>
   </div>
 <% end %>  

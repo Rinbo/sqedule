@@ -1,6 +1,6 @@
 <section class="grid-container">
   <div class="period sqedule-border"><h1><%= @schedule.period %></h1></div>
-  <div class="grid-row sqedule-border"><%= render partial: 'dates' %></div>
+  <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
   <div class="staff sqedule-border"><%= render 'partials/staff' %></div>
   <div class="shift-patterns sqedule-border">
     <% @schedule.patterns.each do |pattern|%>
@@ -13,9 +13,9 @@
     <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
   </div>
   <div class="assignments sqedule-border"><%= render 'partials/assignments' %></div>
-  <div class="grid-row sqedule-border">
-    <% @planning_period.shift_patterns.each do |pattern|%>
-      <%= render patial: 'new_shifts', local: {pattern: pattern} %>
+  <div class="shifts sqedule-border">
+    <% @schedule.patterns.each do |pattern|%>
+      <div class="shift-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
     <% end %>
   </div>
 </section>

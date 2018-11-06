@@ -18,7 +18,7 @@
     text-align: center;
 }
 
-.grid-row {
+.dates-header {
     grid-area: dates;
     overflow: hidden;
     padding-left: 10px;
@@ -39,7 +39,6 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    //border: 1px solid black;
 }
 
 .assignments { 
@@ -49,7 +48,6 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    //border: 1px solid black;
 }
 
 .shift-patterns { 
@@ -59,17 +57,13 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    //border: 1px solid black;
 }
 
 .shifts {
-    grid-area: shifts;   
+    grid-area: shifts;
+    overflow: hidden;
     overflow-y: scroll;
     overflow-x: hidden;
-    display: grid;
-    justify-content: center;
-    align-content: start;
-    //border: 1px solid black;
 }
 
 .pattern {

@@ -1,5 +1,5 @@
 class ShiftsController < ApplicationController
   def show
-    @shift = Shift.new(params[:id])
+    @shift = Shift.find(params[:id])
   end
 end
