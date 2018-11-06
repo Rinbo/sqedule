@@ -1,9 +1,9 @@
 .grid-container {
     display: grid;
-    height: 90vh;
+    height: 95vh;
     grid-row-gap: 15px;
     grid-column-gap: 10px;
-    margin: 20px 70px;
+    margin: 20px 30px;
     padding: 5px; 
     grid-template-areas:
         'period   dates'
@@ -29,7 +29,6 @@
 }
 
 .date {
-    text-align: center;
 }
 
 .staff { 
@@ -39,7 +38,6 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    //border: 1px solid black;
 }
 
 .assignments { 
@@ -49,7 +47,6 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    //border: 1px solid black;
 }
 
 .shift-patterns { 
@@ -59,17 +56,13 @@
     display: grid;
     justify-content: center;
     align-content: start;
-    //border: 1px solid black;
 }
 
 .shifts {
-    grid-area: shifts;   
+    grid-area: shifts;
+    overflow: hidden;
     overflow-y: scroll;
     overflow-x: hidden;
-    display: grid;
-    justify-content: center;
-    align-content: start;
-    //border: 1px solid black;
 }
 
 .pattern {

@@ -13,5 +13,9 @@
     <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
   </div>
   <div class="assignments sqedule-border"><%= render 'partials/assignments' %></div>
-  <div class="shifts sqedule-border"><%= render 'partials/shifts' %></div>
+  <div class="shifts sqedule-border">
+    <% @schedule.patterns.each do |pattern|%>
+      <div class="shift-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
+    <% end %>
+  </div>
 </section>
