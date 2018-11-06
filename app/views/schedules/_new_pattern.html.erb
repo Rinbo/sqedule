@@ -1,0 +1,24 @@
+<%= form_with(model: [ @schedule, @schedule.patterns.build ], local: true, class: 'pattern-grid') do |form| %>
+
+  <div class="field">
+    <%= form.label :shift_start %>
+    <%= form.time_field :shift_start, class: "pattern-input"%>
+  </div>
+  <div class="field">
+    <%= form.label :shift_length %>
+    <%= form.number_field :shift_length, class: "pattern-input" %>
+  </div>
+  <div class="field">
+    <%= form.label :break_length %>
+    <%= form.number_field :break_length, class: "pattern-input" %>
+  </div>
+  <div class="field">
+    <%= form.label :cleaning %>
+    <%= form.check_box :requirements, class: "pattern-checkbox", id: "cleaning" %>
+  </div>
+
+  <div class="field">
+    <p></p>
+    <%= form.submit value: "Create pattern", class: "btn btn-blue" %>
+  </div>
+<% end %>

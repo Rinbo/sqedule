@@ -31,4 +31,8 @@
   @apply outline-none shadow-outline;
 }
 
+.sqedule-border {
+  @apply bg-white shadow-md rounded px-4 pt-4 pb-2 mb-2;
+}
+
 @tailwind utilities;

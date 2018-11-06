@@ -18,7 +18,7 @@ Given("I fill in {string} with 1st of Jan, 2018") do |field|
 end
 
 Then("stop") do
-    save_and_open_page
+    binding.pry
 end
 
 Given("I visit the landing page") do
@@ -34,15 +34,32 @@ Given("the following user is registered") do |table|
       create(:user, user)
     end
 end
+
+Given("the following schedules are in the database") do |table|
+    table.hashes.each do |schedule_hash|
+        @user = User.find_by(email: schedule_hash[:user])
+        schedule_hash.except!("user")
+        create(:schedule, schedule_hash.merge(user: @user))
+    end
+end
   
 Then("I am on the Log in page") do
     visit new_user_session_path
 end
 
-Given("I am logged in as {string}") do |user|
-    login_as user
+Given("I am logged in as {string}") do |email|
+    user = User.find_by_email(email)
+    login_as user, scope: :user
 end
 
 Given("I click {string}") do |link|
     click_on link
+end
+
+Given("I visit the latest planning period") do
+    visit schedule_path(@user.id)
+  end
+  
+Given("I click checkbox {string}") do |checkbox|
+    check checkbox 
 end
