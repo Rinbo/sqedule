@@ -30,4 +30,6 @@ Feature: Schedule model
     And I fill in "Period" with "01-2018"
     And I click on the "Create Schedule" button
     Then I should see "New schedule successfully created"
+    And I should see "Mon" within date field number "1"
+    And I should see "Wen" within date field number "2" 
    
