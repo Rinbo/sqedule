@@ -18,7 +18,7 @@ Given("I fill in {string} with 1st of Jan, 2018") do |field|
 end
 
 Then("stop") do
-    save_and_open_page
+    binding.pry
 end
 
 Given("I visit the landing page") do
@@ -37,9 +37,9 @@ end
 
 Given("the following schedules are in the database") do |table|
     table.hashes.each do |schedule_hash|
-        user = User.find_by(email: schedule_hash[:user])
+        @user = User.find_by(email: schedule_hash[:user])
         schedule_hash.except!("user")
-        create(:schedule, schedule_hash.merge(user: user))
+        create(:schedule, schedule_hash.merge(user: @user))
     end
 end
   
@@ -56,8 +56,8 @@ Given("I click {string}") do |link|
     click_on link
 end
 
-Given("I visit planning period number {string}") do |id|
-    visit schedule_path(id)
+Given("I visit the latest planning period") do
+    visit schedule_path(@user.id)
   end
   
 Given("I click checkbox {string}") do |checkbox|

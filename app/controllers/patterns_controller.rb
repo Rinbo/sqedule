@@ -5,7 +5,7 @@ class PatternsController < ApplicationController
     
     if @pattern.persisted?
       redirect_to schedule_path(@schedule)
-      flash[:notice] = "New pattern was successfully created"
+      flash[:notice] = "New shift pattern was successfully created"
     else
       render :new
       flash[:notice] = "Something went wrong"
