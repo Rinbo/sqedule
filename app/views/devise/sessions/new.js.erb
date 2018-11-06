@@ -1,4 +1,12 @@
 let loginForm = "<%= escape_javascript(render partial: 'partials/login') %>"
 let displayElement = document.getElementById('user-forms')
 displayElement.innerHTML = loginForm;
-closeModalListener('cancel_modal')
+
+let modal = document.getElementById('modal')
+let btn = document.getElementById('btn')
+window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            location.reload()
+        }
+    }
