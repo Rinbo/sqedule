@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_153345) do
+ActiveRecord::Schema.define(version: 2018_11_06_155501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2018_11_06_153345) do
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
+  create_table "shifts", force: :cascade do |t|
+    t.date "date"
+    t.bigint "pattern_id"
+    t.boolean "cleaning", default: false
+    t.integer "staff_req"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pattern_id"], name: "index_shifts_on_pattern_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,4 +58,5 @@ ActiveRecord::Schema.define(version: 2018_11_06_153345) do
 
   add_foreign_key "patterns", "schedules"
   add_foreign_key "schedules", "users"
+  add_foreign_key "shifts", "patterns"
 end
