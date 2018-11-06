@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'shifts/show'
   devise_for :users
 
   root controller: :schedules, action: :index
