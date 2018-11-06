@@ -15,7 +15,7 @@ Then("stop") do
 end
 
 Given("I visit the landing page") do
-  visit root_path
+    visit root_path
 end
 
 Then("I end up on the landing page") do
@@ -30,4 +30,12 @@ end
   
 Then("I am on the Log in page") do
     visit new_user_session_path
+end
+
+Given("I am logged in as {string}") do |user|
+    login_as user
+end
+
+Given("I click {string}") do |link|
+    click_on link
 end
