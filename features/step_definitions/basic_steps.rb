@@ -46,3 +46,11 @@ end
 Given("I click {string}") do |link|
     click_on link
 end
+
+Given("I visit planning period number {string}") do |id|
+    visit schedule_path(id)
+  end
+  
+Given("I click checkbox {string}") do |checkbox|
+    check checkbox 
+end
