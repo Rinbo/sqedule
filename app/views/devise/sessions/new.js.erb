@@ -1,4 +1,4 @@
 let loginForm = "<%= escape_javascript(render partial: 'partials/login') %>"
-console.log('test')
 let displayElement = document.getElementById('user-forms')
 displayElement.innerHTML = loginForm;
+closeModalListener('cancel_modal')

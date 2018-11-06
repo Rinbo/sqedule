@@ -14,3 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+const closeModalListener = (element) => {
+    let elementToObserve = element || 'modal-close-button'
+    let closeButton = document.getElementById(elementToObserve)
+    let modalElement = document.getElementById('modal')
+
+    if (closeButton && modalElement) {
+        closeButton.addEventListener('click', () => {
+            modalElement.remove(),
+            location.reload()
+        })
+    }
+}
