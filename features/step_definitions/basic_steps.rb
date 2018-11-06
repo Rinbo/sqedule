@@ -34,13 +34,22 @@ Given("the following user is registered") do |table|
       create(:user, user)
     end
 end
+
+Given("the following schedules are in the database") do |table|
+    table.hashes.each do |schedule_hash|
+        user = User.find_by(email: schedule_hash[:user])
+        schedule_hash.except!("user")
+        create(:schedule, schedule_hash.merge(user: user))
+    end
+end
   
 Then("I am on the Log in page") do
     visit new_user_session_path
 end
 
-Given("I am logged in as {string}") do |user|
-    login_as user
+Given("I am logged in as {string}") do |email|
+    user = User.find_by_email(email)
+    login_as user, scope: :user
 end
 
 Given("I click {string}") do |link|

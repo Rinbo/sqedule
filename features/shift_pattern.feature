@@ -6,7 +6,11 @@ Feature: Shift Pattern
   Background:
     Given the following user is registered
       | email               | password   | 
-      | user@example.com    | password   |     
+      | user@example.com    | password   |
+    
+    Given the following schedules are in the database
+      | period               | user                | 
+      | user@example.com     | user@example.com    |   
     
     And I am logged in as "user@example.com"
     
