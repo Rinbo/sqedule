@@ -4,6 +4,6 @@ FactoryBot.define do
     shift_length { 1 }
     break_length { 1 }
     cleaning { false }
-    schedule { nil }
+    schedule
   end
 end
