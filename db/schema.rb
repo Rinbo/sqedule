@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_135927) do
+ActiveRecord::Schema.define(version: 2018_11_06_153345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_135927) do
     t.time "shift_start"
     t.integer "shift_length"
     t.integer "break_length"
-    t.boolean "cleaning"
+    t.boolean "cleaning", default: false
     t.bigint "schedule_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
