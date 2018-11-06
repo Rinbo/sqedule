@@ -1,3 +1,32 @@
+.grid-container {
+    display: grid;
+    height: 90vh;
+    grid-row-gap: 15px;
+    grid-column-gap: 5px;
+    margin: 20px 70px;
+    padding: 5px; 
+    grid-template-areas:
+        'period   dates'
+        'staff    assignments'
+        'patterns shifts';
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto 45% 45%;
+}
+
+.period {
+    grid-area: period;
+}
+
+.dates-header {
+    grid-area: dates;
+    overflow: hidden;
+    padding-left: 10px;
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, 2.20vw);
+    border: solid white;
+    align-content: end;
+}
+
 .staff { 
     grid-area: staff;   
     overflow: scroll;
@@ -17,7 +46,7 @@
 }
 
 .shift-patterns { 
-    grid-area: shift-patterns;   
+    grid-area: patterns;   
     overflow: scroll;
     display: grid;
     justify-content: center;
@@ -34,16 +63,3 @@
     border: 1px solid black;
 }
 
-.grid-container {
-    display: grid;
-    height: 90vh;
-    grid-row-gap: 25px;
-    grid-column-gap: 5px;
-    margin: 20px 70px;
-    padding: 5px;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-    'staff assignments'
-    'shift-patterns shifts';
-}

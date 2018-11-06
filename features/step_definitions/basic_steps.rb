@@ -10,6 +10,13 @@ Given("I fill in {string} with {string}") do |field, text|
     fill_in(field, with: text)
 end
 
+Given("I fill in {string} with 1st of Jan, 2018") do |field|
+    element = page.find_by_id(field)
+    element.send_keys :up
+    element.send_keys :tab
+    element.send_keys :up
+end
+
 Then("stop") do
     save_and_open_page
 end

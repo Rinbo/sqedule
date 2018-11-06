@@ -25,11 +25,12 @@ Feature: Schedule model
     And I click on the 'Log in' button
     Then I should see 'Signed in successfully.'
 
+  @javascript
   Scenario: User visits schedule page and creates a schedule
     When I click "New Schedule"
-    And I fill in "Period" with "01-2018"
+    And I fill in "date-input" with 1st of Jan, 2018
     And I click on the "Create Schedule" button
     Then I should see "New schedule successfully created"
     And I should see "Mon" within date field number "1"
-    And I should see "Wen" within date field number "2" 
+    And I should see "Wed" within date field number "31" 
    
