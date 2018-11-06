@@ -3,8 +3,10 @@
   <h1 class="masthead-text heading">Sqedule</h1>
   <div id="user-forms"></div>
   <div class="masthead-text sub-heading">Optimized staff and shift planning for small and medium sized businesses</div>
-  <form action="/users/sign_up" method="get">
-    <button class="btn btn-white masthead-text sign-up">Sign up</button>
-  </form>
+  <%# <form action="/users/sign_up" method="get"> %>
+    <%# <button class="btn btn-white masthead-text sign-up">Sign up</button> %>
+   <%= link_to 'Sign up', new_user_registration_path, remote: true, class: "sign-up btn btn-white masthead-text" %>
+
+  <%# </form> %>
 </section>
 <%= render 'partials/landing_footer' %>

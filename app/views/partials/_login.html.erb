@@ -20,7 +20,7 @@
             <%= f.label :remember_me, class: "inline-flex leading-tight text-blue-dark text-sm font-bold" %>
           </div>
         <% end -%>
-        <button><%= f.submit "Log in", class: "bg-blue hover:bg-blue-dark text-white flex-item-center font-bold py-2 px-4 pt-2 mb-2 rounded focus:outline-none focus:shadow-outline"%></button>
+        <%= f.submit "Log in", class: "bg-blue hover:bg-blue-dark text-white flex-item-center font-bold py-2 px-4 pt-2 mb-2 rounded focus:outline-none focus:shadow-outline"%>
         <%= render "devise/shared/links" %>
         <%= button_tag 'Cancel', id: 'cancel_modal', class: 'pin-r relative mt-4 bg-blue hover:bg-blue-dark text-white flex-item-center font-bold py-2 px-4 pt-2 mb-2 rounded focus:outline-none focus:shadow-outline' %>
       <% end %>

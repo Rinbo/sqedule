@@ -1,0 +1,4 @@
+let signupForm = "<%= escape_javascript(render partial: 'partials/signup') %>"
+let displayElement = document.getElementById('user-forms')
+displayElement.innerHTML = signupForm;
+closeModalListener('cancel_modal')
