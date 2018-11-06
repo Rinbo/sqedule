@@ -1,6 +1,6 @@
 <% pattern.shifts.each do |shift| %>
   <div class="shift sqedule-border">
     <p class="text-center"><%= "#{shift.date.day}_#{pattern.id}" %></p>
-    <p class="text-center bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full mt-4"><%= link_to "+", schedule_pattern_shift_path(@schedule, pattern, shift) %></p>
+    <p class="text-center mt-2"><%= link_to "+", schedule_pattern_shift_path(@schedule, pattern, shift) %></p>
   </div>
 <% end %>  
