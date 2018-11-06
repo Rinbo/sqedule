@@ -2,19 +2,20 @@
     display: grid;
     height: 90vh;
     grid-row-gap: 15px;
-    grid-column-gap: 5px;
+    grid-column-gap: 10px;
     margin: 20px 70px;
     padding: 5px; 
     grid-template-areas:
         'period   dates'
         'staff    assignments'
         'patterns shifts';
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 20% 80%;
     grid-template-rows: auto 45% 45%;
 }
 
 .period {
     grid-area: period;
+    text-align: center;
 }
 
 .dates-header {
@@ -22,44 +23,52 @@
     overflow: hidden;
     padding-left: 10px;
     display: grid;  
-    grid-template-columns: repeat(auto-fill, 2.20vw);
+    grid-template-columns: repeat(auto-fill, 3.2%);
     border: solid white;
     align-content: end;
 }
 
+.date {
+    text-align: center;
+}
+
 .staff { 
     grid-area: staff;   
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: grid;
     justify-content: center;
     align-content: start;
-    border: 1px solid black;
+    //border: 1px solid black;
 }
 
 .assignments { 
     grid-area: assignments;   
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: grid;
     justify-content: center;
     align-content: start;
-    border: 1px solid black;
+    //border: 1px solid black;
 }
 
 .shift-patterns { 
     grid-area: patterns;   
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: grid;
     justify-content: center;
     align-content: start;
-    border: 1px solid black;
+    //border: 1px solid black;
 }
 
 .shifts {
     grid-area: shifts;   
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: grid;
     justify-content: center;
     align-content: start;
-    border: 1px solid black;
+    //border: 1px solid black;
 }
 
