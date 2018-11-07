@@ -28,9 +28,6 @@
     align-content: end;
 }
 
-.date {
-}
-
 .staff { 
     grid-area: staff;   
     overflow-y: scroll;
@@ -67,5 +64,11 @@
 
 .pattern {
     height: 10vh;
-    padding-top: 5px;
+    width: 100%;
+}
+
+.tile {
+    height: 10vh;
+    width: 335px;
+
 }

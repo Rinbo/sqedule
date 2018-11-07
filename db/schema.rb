@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_115456) do
 
   create_table "staffs", force: :cascade do |t|
     t.string "name"
-    t.boolean "cleaning"
+    t.boolean "cleaning", default: false
     t.date "employment_end"
     t.integer "shift_preference"
     t.datetime "created_at", null: false
