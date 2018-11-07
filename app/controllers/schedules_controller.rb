@@ -10,6 +10,7 @@ class SchedulesController < ApplicationController
   def show
     @schedule = Schedule.find(params[:id])
     @staffs = Staff.all
+    @staff = Staff.new
   end
 
   def create
