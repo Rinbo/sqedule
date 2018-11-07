@@ -14,4 +14,16 @@ RSpec.describe Pattern, type: :model do
   describe 'Validations' do
     it { is_expected.to validate_presence_of :schedule_id }    
   end
+
+  describe 'Factory' do
+    it 'should have valid Factory' do
+      expect(create(:pattern)).to be_valid
+    end
+  end
+
+  describe 'Associations' do
+    it { is_expected.to belong_to :schedule }
+    it { is_expected.to have_many :shifts }
+  end
+
 end
