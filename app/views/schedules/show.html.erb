@@ -1,7 +1,17 @@
 <section class="grid-container">
   <div class="period sqedule-border"><h1><%= @schedule.period %></h1></div>
   <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
-  <div class="staff sqedule-border"><%= render 'partials/staff' %></div>
+  <div class="staff sqedule-border">
+    <% @staffs.each do |staff|%>
+      <div class="tile sqedule-border">
+        <p class="text-2xl"><%= staff.name%></p>
+        <p>Shift preference: <%= staff.shift_preference%></p>
+        <p>Cleaning <%= staff.cleaning%></p>
+        <p>Employment end date: <%= staff.employment_end %></p>
+      </div>
+    <% end %>
+    <div class="tile sqedule-border"><%= render partial: 'new_staff_member' %></div>
+  </div>
   <div class="shift-patterns sqedule-border">
     <% @schedule.patterns.each do |pattern|%>
       <div class="pattern sqedule-border">

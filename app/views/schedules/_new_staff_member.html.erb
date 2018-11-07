@@ -1,0 +1,24 @@
+<%= form_with(model: [ @staff ], local: true, class: 'pattern-grid') do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "pattern-input"%>
+  </div>
+  <div class="field">
+    <%= form.label :shift_preference %>
+    <%= form.number_field :shift_preference, class: "pattern-input" %>
+  </div>
+  <div class="field">
+    <%= form.label :employment_end %>
+    <%= form.date_field :employment_end, class: "pattern-input" %>
+  </div>
+  <div class="field">
+    <%= form.label :cleaning %>
+    <%= form.check_box :cleaning, class: "pattern-checkbox", id: "cleaning-2" %>
+  </div>
+
+  <div class="field">
+    <p></p>
+    <%= form.submit value: "Add", class: "btn btn-blue" %>
+  </div>
+<% end %>
