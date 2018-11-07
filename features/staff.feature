@@ -17,7 +17,7 @@ Feature: Staff view
     Given I visit the latest planning period
     And I fill in "Name" with "Rolf Lassgård"
     And I click on the "Add" button
-    Then I should see "Staff member was successfully created"
+    Then I should see "New staff member was successfully created"
     And I should see "Rolf Lassgård"
 
    
