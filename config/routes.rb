@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: :sessions,
     registrations: :registrations
   }
-
+  resources :staffs, only: [:create]
   root controller: :schedules, action: :index
   resources :schedules, only: [:index, :show, :create, :new] do
     resources :patterns, only: [:create] do
