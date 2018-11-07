@@ -1,12 +1,17 @@
-let loginForm = "<%= escape_javascript(render partial: 'partials/login') %>"
-let displayElement = document.getElementById('user-forms')
-displayElement.innerHTML = loginForm;
+if (typeof displayElementSignup !== undefined) {
+  displayElementSignup = document.getElementById('user-forms')
+  loginForm = "<%= escape_javascript(render partial: 'partials/login') %>"
+  modalSignup = document.getElementById('modal')
+} else {
+  let loginForm = "<%= escape_javascript(render partial: 'partials/login') %>"
+  let displayElementSignup = document.getElementById('user-forms')
+  let modalSignup = document.getElementById('modal')
+}
+displayElementSignup.innerHTML = loginForm;
 
-let modal = document.getElementById('modal')
-let btn = document.getElementById('btn')
 window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
             location.reload()
         }
-    }
+}
