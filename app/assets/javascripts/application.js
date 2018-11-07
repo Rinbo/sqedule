@@ -27,3 +27,10 @@ const closeModalListener = (element) => {
         })
     }
 }
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        location.reload()
+    }
+}
