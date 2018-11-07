@@ -1,0 +1,11 @@
+if (typeof displayElementSignup !== undefined) {
+  displayElementSignup = document.getElementById('user-forms')
+  loginForm = "<%= escape_javascript(render partial: 'partials/login') %>"
+  modalSignup = document.getElementById('modal')
+} else {
+  let loginForm = "<%= escape_javascript(render partial: 'partials/login') %>"
+  let displayElementSignup = document.getElementById('user-forms')
+  let modalSignup = document.getElementById('modal')
+}
+displayElementSignup.innerHTML = loginForm;
+
