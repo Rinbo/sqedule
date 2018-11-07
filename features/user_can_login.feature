@@ -10,18 +10,18 @@ Feature: User can log-in
 
     Scenario: Registered user successfully login
         Given I visit the landing page
-        And I click on the 'Login' button
+        And I click on 'Login'
         Then I am on the Log in page
         And I fill in 'Email' with 'sad@path.com'
         And I fill in 'Password' with 'password'
-        And I click on the 'Log in' button
+        And I click on 'Log in'
         Then I should see 'Signed in successfully.'
 
     Scenario: 'User inputs invalid password [Sad path]'
         Given I visit the landing page
-        And I click on the 'Login' button
+        And I click on 'Login'
         Then I am on the Log in page
         And I fill in 'Email' with 'sad@path.com'
         And I fill in 'Password' with 'drowssap'
-        And I click on the 'Log in' button
+        And I click on 'Log in'
         Then I should see 'Invalid Email or password.'

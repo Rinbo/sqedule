@@ -16,7 +16,7 @@ Feature: Schedule model
   Scenario: User visits schedule page and creates a schedule
     When I click "New Schedule"
     And I fill in "date-input" with 1st of Jan, 2018
-    And I click on the "Create Schedule" button
+    And I click on "Create Schedule"
     Then I should see "New schedule successfully created"
     # Below feature tests works locally but fails on sema. Commented out for that reason
     # And I should see "Mon" within date field number "1"

@@ -1,5 +1,5 @@
-Given("I click on the {string} button") do |button|
-    click_button button
+Given("I click on {string}") do |button_or_link|
+    click_on button_or_link
 end
 
 Given("I am on the Sign up page") do
