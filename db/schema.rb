@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_03_173026) do
+ActiveRecord::Schema.define(version: 2018_11_06_155501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "patterns", force: :cascade do |t|
+    t.time "shift_start"
+    t.integer "shift_length"
+    t.integer "break_length"
+    t.boolean "cleaning", default: false
+    t.bigint "schedule_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["schedule_id"], name: "index_patterns_on_schedule_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "period"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.date "date"
+    t.bigint "pattern_id"
+    t.boolean "cleaning", default: false
+    t.integer "staff_req"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pattern_id"], name: "index_shifts_on_pattern_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +56,7 @@ ActiveRecord::Schema.define(version: 2018_11_03_173026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "patterns", "schedules"
+  add_foreign_key "schedules", "users"
+  add_foreign_key "shifts", "patterns"
 end

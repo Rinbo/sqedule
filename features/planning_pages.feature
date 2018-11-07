@@ -1,3 +1,0 @@
-Feature: Feature name
-
-   As 
