@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'webpacker', '~> 3.5'
 gem 'tailwindcss', '~> 0.2.0'
+gem 'devise'
 
 group :development, :test do
   gem 'coveralls', require: false
@@ -27,8 +28,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'chromedriver-helper'
-  gem 'selenium-webdriver'
-  gem 'devise'
+  gem 'selenium-webdriver'  
   gem 'launchy', '~> 2.4', '>= 2.4.3'
 end
 
