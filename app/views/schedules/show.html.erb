@@ -12,20 +12,22 @@
     <% end %>
     <div class="tile sqedule-border"><%= render partial: 'new_staff_member' %></div>
   </div>
-  <div class="shift-patterns sqedule-border">
-    <% @schedule.patterns.each do |pattern|%>
-      <div class="pattern sqedule-border">
-        <p>Start Time: <%= pattern.shift_start %></p>
-        <p>Length: <%= pattern.shift_length %></p>
-        <p>Cleaning: <%= pattern.cleaning %></p>
-      </div>      
-    <% end %>
-    <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
-  </div>
   <div class="assignments sqedule-border"><%= render 'partials/assignments' %></div>
-  <div class="shifts sqedule-border">
-    <% @schedule.patterns.each do |pattern|%>
-      <div class="shift-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
-    <% end %>
+  <div class="shift-patterns sqedule-border">
+    <div class="pattern-section">
+      <% @schedule.patterns.each do |pattern|%>
+        <div class="pattern sqedule-border">
+          <p>Start Time: <%= pattern.shift_start %></p>
+          <p>Length: <%= pattern.shift_length %></p>
+          <p>Cleaning: <%= pattern.cleaning %></p>
+        </div>      
+      <% end %>
+      <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
+    </div>
+    <div class="shifts-section">
+      <% @schedule.patterns.each do |pattern|%>
+        <div class="shift-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
+      <% end %>
+    </div>
   </div>
 </section>

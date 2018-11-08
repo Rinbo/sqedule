@@ -8,7 +8,7 @@
     grid-template-areas:
         'period   dates'
         'staff    assignments'
-        'patterns shifts';
+        'patterns patterns';
     grid-template-columns: 20% 80%;
     grid-template-rows: auto 45% 45%;
 }
@@ -51,16 +51,18 @@
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
     justify-content: center;
     align-content: start;
 }
 
-.shifts {
-    grid-area: shifts;
-    overflow: hidden;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
+// .shifts {
+//     grid-area: shifts;
+//     overflow: hidden;
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+// }
 
 .pattern {
     height: 10vh;
