@@ -2,22 +2,28 @@
   <div class="period sqedule-border"><h1><%= @schedule.period %></h1></div>
   <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
   <div class="staff sqedule-border">
-    <% @staffs.each do |staff|%>
-      <div class="tile sqedule-border">
-        <p class="text-2xl"><%= staff.name%></p>
-        <p>Shift preference: <%= staff.shift_preference%></p>
-        <p>Cleaning <%= staff.cleaning%></p>
-        <p>Employment end date: <%= staff.employment_end %></p>
-      </div>
-    <% end %>
-    <div class="tile sqedule-border"><%= render partial: 'new_staff_member' %></div>
+    <div class="staff-section">
+      <% @staffs.each do |staff|%>
+        <div class="tile sqedule-border">
+          <p class="text-2xl"><%= staff.name%></p>
+          <p>Shift preference: <%= staff.shift_preference%></p>
+          <p>Cleaning <%= staff.cleaning%></p>
+          <p>Employment end date: <%= staff.employment_end %></p>
+        </div>
+      <% end %>
+      <div class="tile sqedule-border"><%= render partial: 'new_staff_member' %></div>
+    </div>
+    <div class="assignment-section">
+      <% @staffs.each do |staff| %>
+        <div class="tile-grid sqedule-border"><%= render partial: 'new_assignments' %></div>
+      <% end %>
+    </div>
   </div>
-  <div class="assignments sqedule-border"><%= render 'partials/assignments' %></div>
   <div class="shift-patterns sqedule-border">
     <div class="pattern-section">
       <% @schedule.patterns.each do |pattern|%>
         <div class="pattern sqedule-border">
-          <p>Start Time: <%= pattern.shift_start %></p>
+          <p>Start Time: <%= pattern.shift_start.strftime("%H:%M") unless pattern.shift_start.nil?%></p>
           <p>Length: <%= pattern.shift_length %></p>
           <p>Cleaning: <%= pattern.cleaning %></p>
         </div>      
@@ -26,7 +32,7 @@
     </div>
     <div class="shifts-section">
       <% @schedule.patterns.each do |pattern|%>
-        <div class="shift-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} unless pattern.id.nil?%></div>
+        <div class="tile-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} unless pattern.id.nil?%></div>
       <% end %>
     </div>
   </div>

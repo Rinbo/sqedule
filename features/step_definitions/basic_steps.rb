@@ -42,6 +42,14 @@ Given("the following schedules are in the database") do |table|
         create(:schedule, schedule_hash.merge(user: @user))
     end
 end
+
+Given("the following patterns are in the database") do |table|
+    table.hashes.each do |pattern_hash|
+        @schedule = Schedule.find_by(period: pattern_hash[:schedule])
+        pattern_hash.except!("schedule")
+        create(:pattern, pattern_hash.merge(schedule: @schedule))
+    end   
+end
   
 Then("I am on the Log in page") do
     visit new_user_session_path

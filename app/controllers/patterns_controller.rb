@@ -4,13 +4,10 @@ class PatternsController < ApplicationController
   def create
     @schedule = Schedule.find(params[:schedule_id])
     @pattern = @schedule.patterns.create(pattern_params)
-    # get_schedule_header(@schedule).each do |date|
-    #   @pattern.shifts.create(date: date, cleaning: @pattern.cleaning)
-    # end
 
     if @pattern.persisted?
       redirect_to schedule_path(@schedule)
-      flash[:notice] = "New shift pattern and shift objects were successfully created"
+      flash[:notice] = "New shift pattern was successfully created"
     else
       render :new
       flash[:notice] = "Something went wrong"

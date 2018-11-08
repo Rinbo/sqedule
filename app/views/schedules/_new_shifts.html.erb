@@ -6,7 +6,7 @@
       </div>
     <% else %>
       <div class="shift">
-          <%= link_to "+", new_schedule_pattern_shift_path(@schedule, pattern, date: date), class: "shift-btn" %>      
+          <%= link_to "+", new_schedule_pattern_shift_path(@schedule, pattern, date: date), class: "shift-btn", id: "#{date}_#{pattern.id}" %>      
       </div>
     <% end %>
 <% end %>

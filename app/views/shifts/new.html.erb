@@ -13,7 +13,7 @@
 
   <div class="field text-center mt-20">
     <%= form.label :staff_req, value: "Staff requirement:" %>
-    <%= form.number_field :staff_req, class: "input-field ml-4", id: "date-input"%>
+    <%= form.number_field :staff_req, class: "input-field ml-4", id: "staff-requirement", min: 0, max: 10 %>
   </div>
 
   <div>    

@@ -11,15 +11,16 @@ Feature: Shift Pattern
     Given the following schedules are in the database
       | period               | user                | 
       | 2018-01              | user@example.com    | 
+    Given the following patterns are in the database
+      | shift_start        | schedule            | 
+      | 06:00              | 2018-01             | 
 
     And I am logged in as "user@example.com"
-
+    @javascript
     Scenario: A user creates a shift pattern and dated shifts objects are genereted automatically
       Given I visit the latest planning period
-      And I fill in "Shift start" with "06:00:AM"
-      And I fill in "Shift length" with "8"
-      And I fill in "Break length" with "1"
-      And I click checkbox "cleaning"
-      And I click on "Create pattern"
-      Then I should see "New shift pattern and shift objects were successfully created"
+      And I click on "2018-01-01_2"
+      And I fill in "staff-requirement" with "1"
+      And I click on "Save Shift"      
+      Then I should see "New shift was successfully created"
      
