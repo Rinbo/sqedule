@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root controller: :schedules, action: :index
   resources :schedules, only: [:index, :show, :create, :new] do
     resources :patterns, only: [:create] do
-      resources :shifts, only: [:show]
+      resources :shifts, only: [:show, :new, :show, :create]
     end
   end
 end

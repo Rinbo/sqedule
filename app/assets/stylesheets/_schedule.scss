@@ -7,8 +7,8 @@
     padding: 5px; 
     grid-template-areas:
         'period   dates'
-        'staff    assignments'
-        'patterns shifts';
+        'staff    staff'
+        'patterns patterns';
     grid-template-columns: 20% 80%;
     grid-template-rows: auto 45% 45%;
 }
@@ -33,6 +33,9 @@
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
+    grid-template-columns: 20% 80%;
+    grid-column-gap: 2px;
+    grid-template-rows: 100%;
     justify-content: center;
     align-content: start;
 }
@@ -51,15 +54,11 @@
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+    grid-column-gap: 2px;
     justify-content: center;
     align-content: start;
-}
-
-.shifts {
-    grid-area: shifts;
-    overflow: hidden;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .pattern {
@@ -68,7 +67,6 @@
 }
 
 .tile {
-    height: 10vh;
-    width: 335px;
+    height: 10vh;    
 
 }

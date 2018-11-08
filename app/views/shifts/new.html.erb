@@ -1,0 +1,26 @@
+<%= form_with(url: schedule_pattern_shifts_path, scope: :shift, local: true) do |form| %>
+  <% if @shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
+
+      <ul>
+      <% @shift.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field text-center mt-20">
+    <%= form.label :staff_req, value: "Staff requirement:" %>
+    <%= form.number_field :staff_req, class: "input-field ml-4", id: "staff-requirement", min: 0, max: 10 %>
+  </div>
+
+  <div>    
+    <%= form.hidden_field :date, value: params[:date].to_date %>
+  </div>  
+
+  <div class="actions text-center mt-4">
+    <%= form.submit class: "btn btn-blue" %>
+  </div>
+<% end %>

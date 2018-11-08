@@ -23,6 +23,14 @@
   @apply bg-white text-grey-darkest;
 }
 
+.shift-btn {
+  @apply bg-transparent text-blue-dark font-semibold py-2 px-4 border border-blue rounded-full;
+}
+
+.shift-btn:hover {
+  @apply bg-blue text-white border-transparent;
+}
+
 .btn-black {
   @apply text-black border-2 border-black;
 }
@@ -30,6 +38,7 @@
 .btn-black:hover {
   @apply bg-black text-white;
 }
+
 .input-field {
   @apply shadow appearance-none border rounded py-2 px-3 text-grey-darker leading-tight;
 }
@@ -40,6 +49,10 @@
 
 .sqedule-border {
   @apply bg-white shadow-md rounded px-2 pt-2 pb-2 mb-2;
+}
+
+.sqedule-border-sections {
+  @apply bg-grey-lightest shadow-md rounded px-2 pt-2 pb-2 mb-2;
 }
 
 @tailwind utilities;

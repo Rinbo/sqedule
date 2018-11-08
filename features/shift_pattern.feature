@@ -21,5 +21,5 @@ Feature: Shift Pattern
     And I fill in "Break length" with "1"
     And I click checkbox "cleaning"
     And I click on "Create pattern"
-    Then I should see "New shift pattern and shift objects were successfully created"
+    Then I should see "New shift pattern was successfully created"
    

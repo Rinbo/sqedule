@@ -1,4 +1,6 @@
 class SchedulesController < ApplicationController
+  include SchedulesHelper
+   
   def index
     @schedules = Schedule.all
   end
@@ -11,6 +13,8 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @staffs = Staff.all
     @staff = Staff.new
+    @shifts = Shift.all
+    @date_array = get_schedule_header(@schedule)        
   end
 
   def create
