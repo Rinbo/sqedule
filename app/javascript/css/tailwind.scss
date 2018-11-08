@@ -26,8 +26,17 @@
 .shift-btn {
   @apply bg-transparent text-blue-dark font-semibold py-2 px-4 border border-blue rounded-full;
 }
+
 .shift-btn:hover {
   @apply bg-blue text-white border-transparent;
+}
+
+.btn-black {
+  @apply text-black border-2 border-black;
+}
+
+.btn-black:hover {
+  @apply bg-black text-white;
 }
 
 .input-field {

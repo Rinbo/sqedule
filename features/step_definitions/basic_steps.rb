@@ -18,7 +18,7 @@ Given("I fill in {string} with Jan, 2018") do |field|
 end
 
 Then("stop") do
-    binding.pry
+    save_and_open_page
 end
 
 Given("I visit the landing page") do
@@ -70,4 +70,17 @@ Given("I visit the latest planning period") do
   
 Given("I click checkbox {string}") do |checkbox|
     check checkbox 
+end
+
+Given("I visit the schedule create page") do
+    visit schedules_path
+end
+  
+Then("I am on landing page") do
+    expect(current_path).to eq root_path
+end
+
+Given("I visit the schedule show page {string}") do |period|
+    schedule = Schedule.find_by(period: period)
+    visit schedule_path(schedule)
 end
