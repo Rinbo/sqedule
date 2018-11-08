@@ -1,7 +1,7 @@
 <section class="grid-container">
   <div class="period sqedule-border"><h1><%= @schedule.period %></h1></div>
   <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
-  <div class="staff sqedule-border">
+  <div class="staff sqedule-border-sections">
     <div class="staff-section">
       <% @staffs.each do |staff|%>
         <div class="tile sqedule-border">
@@ -19,7 +19,7 @@
       <% end %>
     </div>
   </div>
-  <div class="shift-patterns sqedule-border">
+  <div class="shift-patterns sqedule-border-sections">
     <div class="pattern-section">
       <% @schedule.patterns.each do |pattern|%>
         <div class="pattern sqedule-border">
@@ -32,7 +32,9 @@
     </div>
     <div class="shifts-section">
       <% @schedule.patterns.each do |pattern|%>
-        <div class="tile-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} unless pattern.id.nil?%></div>
+        <% unless pattern.id.nil?%>
+          <div class="tile-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
+        <% end %>
       <% end %>
     </div>
   </div>
