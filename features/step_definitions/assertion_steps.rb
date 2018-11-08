@@ -7,3 +7,7 @@ Then("I should see {string} within date field number {string}") do |content, div
     expect(page).to have_content content
   end
 end
+
+Then('stop') do
+  save_and_open_page
+end
