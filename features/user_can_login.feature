@@ -15,7 +15,8 @@ Feature: User can log-in
         And I fill in 'Email' with 'sad@path.com'
         And I fill in 'Password' with 'password'
         And I click on 'Log in'
-        Then I should see 'Signed in successfully.'
+        Then I am on schedule create page
+        And I should see 'Signed in successfully.'
 
     Scenario: 'User inputs invalid password [Sad path]'
         Given I visit the landing page

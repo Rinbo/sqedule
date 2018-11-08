@@ -63,3 +63,7 @@ Given("I visit the latest planning period") do
 Given("I click checkbox {string}") do |checkbox|
     check checkbox 
 end
+
+Given("I am on schedule create page") do
+    expect(current_path).to eq schedules_path
+end
