@@ -23,6 +23,13 @@
   @apply bg-white text-grey-darkest;
 }
 
+.btn-black {
+  @apply text-black border-2 border-black;
+}
+
+.btn-black:hover {
+  @apply bg-black text-white;
+}
 .input-field {
   @apply shadow appearance-none border rounded py-2 px-3 text-grey-darker leading-tight;
 }
