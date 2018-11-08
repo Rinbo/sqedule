@@ -26,7 +26,7 @@
     </div>
     <div class="shifts-section">
       <% @schedule.patterns.each do |pattern|%>
-        <div class="shift-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
+        <div class="shift-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} unless pattern.nil?%></div>
       <% end %>
     </div>
   </div>

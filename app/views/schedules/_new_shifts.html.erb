@@ -4,8 +4,7 @@
     <% unless shift[0].nil? %>
       <p class="text-center"><%= "#{shift[0].date.day}_#{shift[0].pattern.id}" %></p>
     <% else %>
-      <%p_id = pattern.id%>      
-      <p class="text-center mt-2"><%= link_to "+", new_schedule_pattern_shift_url(@schedule, pattern_id: pattern.id) %></p>
+      <p class="text-center mt-2"><%= link_to "+", "/schedules/#{@schedule.id}/patterns/#{pattern.id}/shifts/new" %></p>
     <% end %>
   </div>
 <% end %>
