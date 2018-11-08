@@ -16,7 +16,7 @@ Feature: Shift Pattern
       | 06:00              | 2018-01             | 
 
     And I am logged in as "user@example.com"
-    @javascript
+    
     Scenario: A user creates a shift pattern and dated shifts objects are genereted automatically
       Given I visit the latest planning period
       And I click on "2018-01-01_2"
