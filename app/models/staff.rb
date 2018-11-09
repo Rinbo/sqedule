@@ -1,4 +1,4 @@
 class Staff < ApplicationRecord
-  validates_presence_of :name
-  #belongs_to :user
+  validates_presence_of :name, :user_id
+  belongs_to :user
 end
