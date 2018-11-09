@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+period = Time.new
+24.times do
+  Schedule.create(period: period.strftime("%Y-%m"))
+  period = period.next_month
+end
+  
