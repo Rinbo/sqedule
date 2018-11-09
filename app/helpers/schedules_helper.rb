@@ -18,4 +18,7 @@ module SchedulesHelper
     end
     date_array
   end
+
+
+
 end
