@@ -19,6 +19,11 @@ module SchedulesHelper
     date_array
   end
 
+  def get_period_name(unformatted_period)
+    unformatted_period += "-01"
+    unformatted_period.to_datetime.strftime("%B, %Y")
+  end
+
 
 
 end

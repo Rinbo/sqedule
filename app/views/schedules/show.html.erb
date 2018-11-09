@@ -1,6 +1,6 @@
 <%= render 'partials/landing_nav' %>
 <section class="grid-container">
-  <div class="period sqedule-border"><h1><%= @schedule.period %></h1></div>
+  <div class="period sqedule-border"><h1><%= get_period_name(@schedule.period) %></h1></div>
   <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
   <div class="staff sqedule-border-sections">
     <div class="staff-section">

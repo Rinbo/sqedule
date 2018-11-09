@@ -5,7 +5,7 @@ class PatternsController < ApplicationController
     @pattern = current_user.patterns.create(pattern_params)
 
     if @pattern.persisted?
-      redirect_to schedule_path(@schedule)
+      redirect_to request.referrer
       flash[:notice] = "New shift pattern was successfully created"
     else
       render :new
