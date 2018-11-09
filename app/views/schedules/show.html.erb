@@ -22,7 +22,7 @@
   </div>
   <div class="shift-patterns sqedule-border-sections">
     <div class="pattern-section">
-      <% @schedule.patterns.each do |pattern|%>
+      <% @patterns.each do |pattern|%>
         <div class="pattern sqedule-border">
           <p>Start Time: <%= pattern.shift_start.strftime("%H:%M") unless pattern.shift_start.nil?%></p>
           <p>Length: <%= pattern.shift_length %></p>
@@ -32,7 +32,7 @@
       <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
     </div>
     <div class="shifts-section">
-      <% @schedule.patterns.each do |pattern|%>
+      <% @patterns.each do |pattern|%>
         <% unless pattern.id.nil?%>
           <div class="tile-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
         <% end %>

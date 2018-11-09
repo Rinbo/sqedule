@@ -2,8 +2,7 @@ class PatternsController < ApplicationController
   include SchedulesHelper
 
   def create
-    @schedule = Schedule.find(params[:schedule_id])
-    @pattern = @schedule.patterns.create(pattern_params)
+    @pattern = current_user.patterns.create(pattern_params)
 
     if @pattern.persisted?
       redirect_to schedule_path(@schedule)

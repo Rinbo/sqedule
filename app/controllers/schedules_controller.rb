@@ -12,8 +12,10 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
-    @staffs = Staff.all
-    @staff = Staff.new
+    @staffs = current_user.staffs.all
+    @staff = current_user.staffs.new
+    @patterns = current_user.patterns.all
+    @pattern = current_user.patterns.new
     @shifts = Shift.all
     @date_array = get_schedule_header(@schedule)        
   end
