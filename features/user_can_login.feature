@@ -10,7 +10,7 @@ Feature: User can log-in
 
     Scenario: Registered user successfully login
         Given I visit the landing page
-        And I click on 'Login'
+        And I click on 'Log in'
         Then I am on the Log in page
         And I fill in 'Email' with 'sad@path.com'
         And I fill in 'Password' with 'password'
@@ -19,7 +19,7 @@ Feature: User can log-in
 
     Scenario: 'User inputs invalid password [Sad path]'
         Given I visit the landing page
-        And I click on 'Login'
+        And I click on 'Log in'
         Then I am on the Log in page
         And I fill in 'Email' with 'sad@path.com'
         And I fill in 'Password' with 'drowssap'

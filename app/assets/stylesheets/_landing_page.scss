@@ -13,7 +13,6 @@
     image_url("landing_page_2.jpg");
   background-position: center center;
   background-size: cover;
-
 }
 
 .masthead-text  {  
@@ -40,15 +39,14 @@
 .sub-heading {
   font-size: 2rem;  
   width: 24vw;
-  margin: 50px auto;
+  margin: 50px auto 25px auto;
 }
 
 .sign-up {
-  font-size: 2rem;  
+  font-size: 1.5rem;  
   width: 8vw;
-  margin: 50px auto;
-  display: block;
-  text-decoration: none;  
+  margin-right: 10px;
+  text-decoration: none; 
 }
 
 .landing-nav {
@@ -99,6 +97,7 @@
   text-align: center;
 }
 
-.center-button {
-  text-align: center;
+.wrapper {
+  display: flex;
+  justify-content: center;
 }
