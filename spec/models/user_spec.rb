@@ -21,7 +21,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Associations' do
-    it { is_expected.to have_many :schedules }
+    it { is_expected.to have_many :patterns }
+    it { is_expected.to have_many :staffs }
   end
 
 end
