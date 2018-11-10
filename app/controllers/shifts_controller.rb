@@ -9,10 +9,9 @@ class ShiftsController < ApplicationController
 
   def create
     @pattern = Pattern.find(params[:pattern_id])
-    @schedule = Schedule.find(params[:schedule_id])
     @shift = @pattern.shifts.create(shift_params)
     if @shift.persisted?
-      redirect_to @schedule
+      redirect_to request.referrer
       flash[:notice] = "New shift was successfully created"
     else
       render :new

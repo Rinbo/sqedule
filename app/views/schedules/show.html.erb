@@ -1,6 +1,12 @@
 <%= render 'partials/landing_nav' %>
 <section class="grid-container">
-  <div class="period sqedule-border"><h1><%= get_period_name(@schedule.period) %></h1></div>
+  <div class="period sqedule-border">
+    <span>      
+      <h1><%= get_period_name(@schedule.period) %></h1>
+      <%= link_to "<", schedule_path(@prev_month), class: "month-step" unless @prev_month.nil? %>
+      <%= link_to ">", schedule_path(@next_month), class: "month-step" unless @next_month.nil? %>
+    </span>
+  </div>
   <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
   <div class="staff sqedule-border-sections">
     <div class="staff-section">

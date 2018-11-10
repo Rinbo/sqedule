@@ -1,13 +1,13 @@
 <% @date_array.each do |date| %>   
-    <% shift = @shifts.select {|shift| (date == shift.date) && shift.pattern_id == pattern.id} %>
-    <% unless shift[0].nil? %>
-      <div class="shift sqedule-border">
-        <p><%= "#{shift[0].date.day}_#{shift[0].pattern.id}" %></p>
-      </div>
-    <% else %>
-      <div class="shift">
-          <%= link_to "+", new_schedule_pattern_shift_path(@schedule, pattern, date: date), class: "shift-btn", id: "#{date}_#{pattern.id}" %>      
-      </div>
-    <% end %>
+  <% shift = @shifts.select {|shift| (date == shift.date) && (shift.pattern_id == pattern.id)} %>
+  <% unless shift[0].nil? %>
+    <div class="shift sqedule-border">
+      <p><%= "#{shift[0].date.day}_#{shift[0].pattern.id}" %></p>
+    </div>
+  <% else %>
+    <div class="shift">
+        <%= link_to "+", new_pattern_shift_path(pattern, date: date), class: "shift-btn", id: "#{date}_#{pattern.id}" %>      
+    </div>
+  <% end %>
 <% end %>
 

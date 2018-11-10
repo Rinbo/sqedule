@@ -55,4 +55,12 @@
   @apply bg-grey-lightest shadow-md rounded px-2 pt-2 pb-2 mb-2;
 }
 
+.month-step {
+  @apply text-2xl no-underline;
+}
+
+.month-step:visited {
+  @apply text-black;
+}
+
 @tailwind utilities;

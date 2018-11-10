@@ -11,7 +11,10 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
+    current_id = params[:id].to_i
+    @schedule = Schedule.find(current_id)
+    @next_month = get_another_month(current_id + 1)
+    @prev_month = get_another_month(current_id - 1)
     @staffs = current_user.staffs.all
     @staff = current_user.staffs.new
     @patterns = current_user.patterns.all
@@ -32,6 +35,13 @@ class SchedulesController < ApplicationController
   end
 
   private
+
+  def get_another_month(id)
+    begin
+      Schedule.find(id)
+    rescue
+    end
+  end
 
   def schedule_params
     params.require(:schedule).permit(:period)
