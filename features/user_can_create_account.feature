@@ -4,6 +4,11 @@ Feature: User creates account
     in order to gain access to the planning system,
     I would like to create an account.
 
+    Background:
+    Given the following schedules are in the database
+      | period               | 
+      | 2018-11              |
+
     Scenario: Successfull registration as a new store manager
         Given I visit the landing page     
         And I click on "Sign up"
@@ -12,7 +17,6 @@ Feature: User creates account
         And I fill in "Password" with "password"
         And I fill in "Password confirmation" with "password" 
         And I click on "Sign up"
-        Then I end up on the landing page 
         And I should see "Welcome! You have signed up successfully."
 
     Scenario: User enters wrong password in password confirmation [Sad path]

@@ -18,7 +18,7 @@ Given("I fill in {string} with Jan, 2018") do |field|
 end
 
 Then("stop") do
-    save_and_open_page
+    binding.pry
 end
 
 Given("I visit the landing page") do
@@ -36,18 +36,16 @@ Given("the following user is registered") do |table|
 end
 
 Given("the following schedules are in the database") do |table|
-    table.hashes.each do |schedule_hash|
-        @user = User.find_by(email: schedule_hash[:user])
-        schedule_hash.except!("user")
-        create(:schedule, schedule_hash.merge(user: @user))
+    table.hashes.each do |schedule|        
+        create(:schedule, schedule)
     end
 end
 
 Given("the following patterns are in the database") do |table|
     table.hashes.each do |pattern_hash|
-        @schedule = Schedule.find_by(period: pattern_hash[:schedule])
-        pattern_hash.except!("schedule")
-        create(:pattern, pattern_hash.merge(schedule: @schedule))
+        @user = User.find_by(email: pattern_hash[:user])
+        pattern_hash.except!("user")
+        create(:pattern, pattern_hash.merge(user: @user))
     end   
 end
   
@@ -64,23 +62,19 @@ Given("I click {string}") do |link|
     click_on link
 end
 
-Given("I visit the latest planning period") do
-    visit schedule_path(@user.id)
+Given("I visit the first planning period") do   
+    visit schedule_path(Schedule.last)
   end
   
 Given("I click checkbox {string}") do |checkbox|
     check checkbox 
 end
 
-Given("I visit the schedule create page") do
-    visit schedules_path
-end
-  
-Then("I am on landing page") do
-    expect(current_path).to eq root_path
-end
-
 Given("I visit the schedule show page {string}") do |period|
     schedule = Schedule.find_by(period: period)
     visit schedule_path(schedule)
+end
+
+Given("I click on a new shift") do
+    click_on "#{Schedule.last.period}-01_#{Pattern.last.id}"
 end

@@ -6,7 +6,11 @@ Feature: User can log-in
     Background:
         Given the following user is registered
             | email         | password   | 
-            | sad@path.com  | password   |        
+            | sad@path.com  | password   |
+        
+        Given the following schedules are in the database
+        | period               | 
+        | 2018-11              |
 
     Scenario: Registered user successfully login
         Given I visit the landing page
