@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: :registrations
   }
   resources :patterns, only: [:create] do
-    resources :shifts, only: [:show, :new, :show, :create]
+    resources :shifts, only: [:show, :new, :create]
   end
   resources :staffs, only: [:create]
   root controller: :schedules, action: :index
