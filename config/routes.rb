@@ -3,11 +3,10 @@ Rails.application.routes.draw do
     sessions: :sessions,
     registrations: :registrations
   }
+  resources :patterns, only: [:create] do
+    resources :shifts, only: [:show, :new, :create]
+  end
   resources :staffs, only: [:create]
   root controller: :schedules, action: :index
-  resources :schedules, only: [:index, :show, :create, :new] do
-    resources :patterns, only: [:create] do
-      resources :shifts, only: [:show, :new, :show, :create]
-    end
-  end
+  resources :schedules, only: [:index, :show, :create, :new] 
 end

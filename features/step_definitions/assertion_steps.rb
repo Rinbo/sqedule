@@ -7,7 +7,7 @@ Then("I should see {string} within date field number {string}") do |content, div
     expect(page).to have_content content
   end
 end
-
-Then('stop') do
-  save_and_open_page
+  
+Then("I am on landing page") do
+  expect(current_path).to eq root_path
 end

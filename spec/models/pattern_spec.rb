@@ -8,11 +8,11 @@ RSpec.describe Pattern, type: :model do
     it { is_expected.to have_db_column :break_length }
     it { is_expected.to have_db_column :created_at }
     it { is_expected.to have_db_column :updated_at }
-    it { is_expected.to have_db_column :schedule_id }
+    it { is_expected.to have_db_column :user_id }
   end
 
   describe 'Validations' do
-    it { is_expected.to validate_presence_of :schedule_id }    
+    it { is_expected.to validate_presence_of :user_id }    
   end
 
   describe 'Factory' do
@@ -22,7 +22,7 @@ RSpec.describe Pattern, type: :model do
   end
 
   describe 'Associations' do
-    it { is_expected.to belong_to :schedule }
+    it { is_expected.to belong_to :user }
     it { is_expected.to have_many :shifts }
   end
 

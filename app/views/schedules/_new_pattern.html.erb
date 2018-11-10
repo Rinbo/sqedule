@@ -1,4 +1,4 @@
-<%= form_with(model: [ @schedule, @schedule.patterns.build ], local: true, class: 'pattern-grid') do |form| %>
+<%= form_with(model: @pattern, local: true, class: 'pattern-grid') do |form| %>
 
   <div class="field">
     <%= form.label :shift_start %>

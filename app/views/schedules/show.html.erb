@@ -1,6 +1,12 @@
 <%= render 'partials/landing_nav' %>
 <section class="grid-container">
-  <div class="period sqedule-border"><h1><%= @schedule.period %></h1></div>
+  <div class="period sqedule-border">
+    <span>      
+      <h1><%= get_period_name(@schedule.period) %></h1>
+      <%= link_to "<", schedule_path(@prev_month), class: "month-step" unless @prev_month.nil? %>
+      <%= link_to ">", schedule_path(@next_month), class: "month-step" unless @next_month.nil? %>
+    </span>
+  </div>
   <div class="dates-header sqedule-border"><%= render partial: 'dates' %></div>
   <div class="staff sqedule-border-sections">
     <div class="staff-section">
@@ -22,7 +28,7 @@
   </div>
   <div class="shift-patterns sqedule-border-sections">
     <div class="pattern-section">
-      <% @schedule.patterns.each do |pattern|%>
+      <% @patterns.each do |pattern|%>
         <div class="pattern sqedule-border">
           <p>Start Time: <%= pattern.shift_start.strftime("%H:%M") unless pattern.shift_start.nil?%></p>
           <p>Length: <%= pattern.shift_length %></p>
@@ -32,7 +38,7 @@
       <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
     </div>
     <div class="shifts-section">
-      <% @schedule.patterns.each do |pattern|%>
+      <% @patterns.each do |pattern|%>
         <% unless pattern.id.nil?%>
           <div class="tile-grid sqedule-border"><%= render partial: 'new_shifts', locals: {pattern: pattern} %></div>
         <% end %>
