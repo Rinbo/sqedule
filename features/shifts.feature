@@ -16,11 +16,17 @@ Feature: Shift Pattern
       | 06:00              | user@example.com | 
 
     And I am logged in as "user@example.com"
-   
-    Scenario: A user creates a shift pattern and dated shifts objects are genereted automatically
-      Given I visit the first planning period      
-      And I click on a new shift
-      And I fill in "staff-requirement" with "1"
-      And I click on "Save Shift"      
+    Given I visit the first planning period 
+
+    Scenario: A user can create a default shift by just clicking the plus button on a shift           
+      And I click on a new shift      
       Then I should see "New shift was successfully created"
-     
+
+    Scenario: A user can update a shift
+      And I click on a new shift
+      Then I should see "New shift was successfully created"
+      And I click on "1"
+      And I fill in "Staff req" with "3"
+      And I click on "Update"
+      Then I should see "Shift was successfully updated."
+      
