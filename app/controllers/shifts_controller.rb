@@ -19,6 +19,21 @@ class ShiftsController < ApplicationController
     end
   end
 
+  def edit
+    @shift = Shift.find(params[:id])
+  end
+
+  def update
+    @shift = Shift.find(params[:id])
+    if @shift.update(shift_params)
+      redirect_to root_path
+      flash[:notice] = "Shift was successfully updated."
+    else
+      render 'edit'
+    end
+  end
+  
+
   private
 
   def shift_params
