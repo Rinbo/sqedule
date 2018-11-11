@@ -1,5 +1,5 @@
 <% get_schedule_header(@schedule).each_with_index do |date, index| %>
-  <div id="<%= "date_#{index}" %>" class="date">
+  <div id="<%= "date_#{index}" %>" class="text-center sqedule-border" style="background-color: <%= "#{"pink" if date.wday == 0}" %>">
     <p><%= Date::ABBR_DAYNAMES[date.wday]%></p>
     <p><%= date.day%></p>
   </div>

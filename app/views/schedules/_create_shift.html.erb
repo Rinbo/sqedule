@@ -1,0 +1,24 @@
+<%= form_with(url: pattern_shifts_path(pattern), scope: :shift, local: true, class: "flex content-center justify-center") do |form| %>
+  <% if @shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
+
+      <ul>
+      <% @shift.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div> 
+  <% end %>
+
+  <div>
+    <%= form.hidden_field :staff_req, value: "1" %>
+  </div>
+
+  <div>    
+    <%= form.hidden_field :date, value: date.to_date %>
+  </div>  
+
+  <%= form.submit class: "#{date.wday == 0 ? "pink-shift-btn" : "shift-btn"}", value: "+", data: { disable_with: false }, id: "#{date}_#{pattern.id}" %>
+  
+<% end %>
