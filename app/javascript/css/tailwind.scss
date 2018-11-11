@@ -75,5 +75,33 @@
   @apply text-black;
 }
 
+.sqedule-label {
+  @apply inline-flex leading-tight mt-4 text-blue-dark text-sm font-bold;
+}
+
+.sqedule-input {
+  @apply block shadow appearance-none border rounded w-2/3 py-2 px-2 text-grey-darker leading-tight;
+}
+
+.sqedule-input:focus {
+  @apply  outline-none shadow-outline;
+}
+
+.sqedule-form {
+  @apply bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-8;
+}
+
+.sqedule-dropdown {
+  @apply block appearance-none mt-4 bg-white border border-grey-light px-4 py-2 pr-8 rounded shadow leading-tight;
+}
+
+.sqedule-dropdown:focus {
+  @apply outline-none shadow-outline;
+}
+
+.sqedule-dropdown:hover {
+  @apply border-grey;
+}
+
 @tailwind utilities;
 

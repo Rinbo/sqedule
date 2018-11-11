@@ -15,12 +15,10 @@
       <% @staffs.each do |staff|%>
         <div class="tile sqedule-border">
           <p class="text-2xl"><%= staff.name%></p>
-          <p>Shift preference: <%= staff.shift_preference%></p>
           <p>Primary Role <%= staff.primary_role%></p>
-          <p>Employment end date: <%= staff.employment_end %></p>
         </div>
       <% end %>
-      <div class="tile sqedule-border"><%= render partial: 'new_staff_member' %></div>
+      <div class="add-tile sqedule-border"><%= link_to "+", new_staff_path, class: "btn btn-blue text-center w-48 no-underline" %></div>
     </div>
     <div class="assignment-section">
       <% @staffs.each do |staff| %>
@@ -29,15 +27,14 @@
     </div>
   </div>
   <div class="shift-patterns sqedule-border-sections">
-    <div class="pattern-section">
+    <div class="tile-section">
       <% @patterns.each do |pattern|%>
-        <div class="pattern sqedule-border">
+        <div class="tile sqedule-border">
           <p>Start Time: <%= pattern.shift_start.strftime("%H:%M") unless pattern.shift_start.nil?%></p>
-          <p>Length: <%= pattern.shift_length %></p>
           <p>Primary role: <%= pattern.primary_role %></p>
         </div>      
       <% end %>
-      <div class="pattern sqedule-border"><%= link_to "+",  %></div>
+      <div class="add-tile sqedule-border"><%= link_to "+", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline" %></div>
     </div>
     <div class="shifts-section">
       <% @patterns.each do |pattern|%>

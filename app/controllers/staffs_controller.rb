@@ -7,7 +7,7 @@ class StaffsController < ApplicationController
   def create
     @staff = current_user.staffs.create(staff_params)
     if @staff.persisted?
-      redirect_to request.referrer
+      redirect_to root_path
       flash[:notice] = "New staff member was successfully created"
     else
       redirect_to root_path
