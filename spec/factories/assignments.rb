@@ -3,6 +3,6 @@ FactoryBot.define do
     staff { nil }
     locked_shift_id { false }
     off { false }
-    shift { nil }
+    shift { "MyString" }
   end
 end

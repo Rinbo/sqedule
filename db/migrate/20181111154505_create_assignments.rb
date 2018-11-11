@@ -4,7 +4,7 @@ class CreateAssignments < ActiveRecord::Migration[5.2]
       t.references :staff, foreign_key: true
       t.boolean :locked_shift_id
       t.boolean :off
-      t.references :shift, foreign_key: true
+      t.string :shift
 
       t.timestamps
     end
