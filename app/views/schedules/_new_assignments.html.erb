@@ -1,0 +1,13 @@
+<% @date_array.each do |date| %>
+  <% assignment = @assignments.select {|assignment| (date == assignment.date) && (assignment.staff_id == staff.id)} %>
+  <% unless assignment[0].nil? %>
+    <div class="shift sqedule-border" style="background-color: <%= "#{"pink" if date.wday == 0}" %>">
+      <p><%= link_to "#{assignment[0].off == true ? 'OFF' : assignment[0].shift}", edit_staff_assignment_path(staff, assignment), class: "no-underline text-black p-6" %></p>
+    </div>
+  <% else %>
+    <div class="shift">
+      <p><%= link_to "+", new_staff_assignment_path(staff, assignment, date: date), class: "no-underline text-black p-6" %></p>
+    </div>
+  <% end %>
+<% end %>
+
