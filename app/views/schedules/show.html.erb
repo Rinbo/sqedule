@@ -18,7 +18,7 @@
           <p>Primary Role <%= staff.primary_role%></p>
         </div>
       <% end %>
-      <div class="add-tile sqedule-border"><%= link_to "+", new_staff_path, class: "btn btn-blue text-center w-48 no-underline" %></div>
+      <div class="add-tile sqedule-border"><%= link_to "+", new_staff_path, class: "btn btn-blue text-center w-48 no-underline", id: "add-staff" %></div>
     </div>
     <div class="assignment-section">
       <% @staffs.each do |staff| %>
@@ -34,7 +34,7 @@
           <p>Primary role: <%= pattern.primary_role %></p>
         </div>      
       <% end %>
-      <div class="add-tile sqedule-border"><%= link_to "+", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline" %></div>
+      <div class="add-tile sqedule-border"><%= link_to "+", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", id: "add-pattern" %></div>
     </div>
     <div class="shifts-section">
       <% @patterns.each do |pattern|%>

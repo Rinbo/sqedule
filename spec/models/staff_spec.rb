@@ -4,11 +4,12 @@ RSpec.describe Staff, type: :model do
   describe 'DB table' do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :name }
-    it { is_expected.to have_db_column :cleaning }
+    it { is_expected.to have_db_column :primary_role }
     it { is_expected.to have_db_column :shift_preference }
     it { is_expected.to have_db_column :created_at }
     it { is_expected.to have_db_column :updated_at }
     it { is_expected.to have_db_column :user_id }
+    it { is_expected.to have_db_column :roles }
   end
 
   describe 'Validations' do

@@ -3,7 +3,7 @@ FactoryBot.define do
     shift_start { "2018-11-06 14:59:27" }
     shift_length { 1 }
     break_length { 1 }
-    cleaning { false }
+    primary_role { "myString" }
     user
   end
 end
