@@ -1,5 +1,9 @@
 class StaffsController < ApplicationController
 
+  def new
+    @staff = current_user.staffs.new
+  end
+
   def create
     @staff = current_user.staffs.create(staff_params)
     if @staff.persisted?

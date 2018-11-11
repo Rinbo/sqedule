@@ -1,6 +1,10 @@
 class PatternsController < ApplicationController
   include SchedulesHelper
 
+  def new
+    @pattern = current_user.patterns.new
+  end
+
   def create
     @pattern = current_user.patterns.create(pattern_params)
 

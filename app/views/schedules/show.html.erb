@@ -37,7 +37,7 @@
           <p>Primary role: <%= pattern.primary_role %></p>
         </div>      
       <% end %>
-      <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>
+      <div class="pattern sqedule-border"><%= link_to "+",  %></div>
     </div>
     <div class="shifts-section">
       <% @patterns.each do |pattern|%>
