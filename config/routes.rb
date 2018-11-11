@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'assignments/create'
+  get 'assignments/new'
   devise_for :users, controllers: {
     sessions: :sessions,
     registrations: :registrations
@@ -9,4 +11,5 @@ Rails.application.routes.draw do
   resources :staffs, only: [:create]
   root controller: :schedules, action: :index
   resources :schedules, only: [:index, :show, :create, :new] 
+  resources :assignments, only: [:create, :new]
 end

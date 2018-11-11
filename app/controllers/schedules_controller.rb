@@ -18,7 +18,6 @@ class SchedulesController < ApplicationController
     @shift = Shift.new
     @shifts = Shift.all
     @date_array = get_schedule_header(@schedule)
-    @assignment = Assignment.new
     @assignments = Assignment.all
 
   end
