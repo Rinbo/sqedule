@@ -16,7 +16,7 @@
         <div class="tile sqedule-border">
           <p class="text-2xl"><%= staff.name%></p>
           <p>Shift preference: <%= staff.shift_preference%></p>
-          <p>Cleaning <%= staff.cleaning%></p>
+          <p>Primary Role <%= staff.primary_role%></p>
           <p>Employment end date: <%= staff.employment_end %></p>
         </div>
       <% end %>
@@ -34,7 +34,7 @@
         <div class="pattern sqedule-border">
           <p>Start Time: <%= pattern.shift_start.strftime("%H:%M") unless pattern.shift_start.nil?%></p>
           <p>Length: <%= pattern.shift_length %></p>
-          <p>Cleaning: <%= pattern.cleaning %></p>
+          <p>Primary role: <%= pattern.primary_role %></p>
         </div>      
       <% end %>
       <div class="pattern sqedule-border"><%= render partial: 'new_pattern' %></div>

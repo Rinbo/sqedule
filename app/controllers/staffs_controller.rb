@@ -6,7 +6,7 @@ class StaffsController < ApplicationController
       redirect_to request.referrer
       flash[:notice] = "New staff member was successfully created"
     else
-      render redirect_to root_path
+      redirect_to root_path
       flash[:notice] = "Something went wrong"
     end
   end
@@ -14,7 +14,7 @@ class StaffsController < ApplicationController
   private
 
   def staff_params
-    params.require(:staff).permit(:name, :shift_preference, :cleaning, :employment_end)
+    params.require(:staff).permit(:name, :shift_preference, :primary_role, :employment_end, :roles)
   end
 
 end

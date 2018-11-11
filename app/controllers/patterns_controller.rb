@@ -8,7 +8,7 @@ class PatternsController < ApplicationController
       redirect_to request.referrer
       flash[:notice] = "New shift pattern was successfully created"
     else
-      render :new
+      redirect_to root_path
       flash[:notice] = "Something went wrong"
     end
   end
@@ -16,6 +16,6 @@ class PatternsController < ApplicationController
   private
 
   def pattern_params
-    params.require(:pattern).permit(:schedule_id, :shift_start, :shift_length, :break_length, :cleaning)
+    params.require(:pattern).permit(:schedule_id, :shift_start, :shift_length, :break_length, :primary_role)
   end
 end
