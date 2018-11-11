@@ -3,13 +3,22 @@
   align-content: center;
   justify-content: center;
   height: 60px;
+  position: relative;
   a {
     text-decoration: none;
   }
   a:visited {
     color: black;
-  }  
+  }
+  form {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
+
 .shift:hover {
   transform: scale(1.05);
 }
@@ -22,4 +31,14 @@
   grid-template-columns: repeat(auto-fill, 3.1%);
   grid-gap: 1px;
   align-content: center;
+}
+
+.date-grid {
+  overflow: hidden;
+  padding-left: 10px;
+  height: 100%;
+  display: grid;  
+  grid-template-columns: repeat(auto-fill, 3.1%);
+  grid-gap: 1px;
+  align-content: end;
 }
