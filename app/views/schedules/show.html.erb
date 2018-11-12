@@ -22,7 +22,7 @@
     </div>
     <div class="assignment-section">
       <% @staffs.each do |staff| %>
-        <div class="tile-grid sqedule-border"><%= render partial: 'new_assignments' %></div>
+        <div class="tile-grid sqedule-border"><%= render partial: 'new_assignments', locals: {staff: staff} %></div>
       <% end %>
     </div>
   </div>

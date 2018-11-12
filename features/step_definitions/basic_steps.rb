@@ -49,6 +49,12 @@ Given("the following patterns are in the database") do |table|
     end   
 end
   
+Given("the following staff are in the database") do |table|
+    table.hashes.each do |staff|
+        create(:staff, staff)
+    end 
+end
+
 Then("I am on the Log in page") do
     visit new_user_session_path
 end
@@ -67,7 +73,7 @@ Given("I visit the first planning period") do
   end
   
 Given("I click checkbox {string}") do |checkbox|
-    check checkbox 
+    check checkbox
 end
 
 Given("I visit the schedule show page {string}") do |period|
@@ -82,3 +88,8 @@ end
 Given("I select {string} from {string}") do |option, list|
     select option, from: list
 end
+  
+Given("I click on a new assignment") do
+    click_on "#{Schedule.last.period}-01_#{Staff.last.id}"
+end
+

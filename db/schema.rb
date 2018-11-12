@@ -15,6 +15,17 @@ ActiveRecord::Schema.define(version: 2018_11_11_191551) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "staff_id"
+    t.boolean "locked_shift_id"
+    t.boolean "off"
+    t.string "shift"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date"
+    t.index ["staff_id"], name: "index_assignments_on_staff_id"
+  end
+
   create_table "patterns", force: :cascade do |t|
     t.time "shift_start"
     t.datetime "created_at", null: false
@@ -62,10 +73,16 @@ ActiveRecord::Schema.define(version: 2018_11_11_191551) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "assignments", "staffs"
   add_foreign_key "patterns", "users"
   add_foreign_key "shifts", "patterns"
   add_foreign_key "staffs", "users"
