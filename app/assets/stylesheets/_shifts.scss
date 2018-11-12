@@ -1,3 +1,5 @@
+$row-height: 8vh;
+
 .shift {
   display: grid;
   align-content: center;
@@ -27,7 +29,7 @@
   overflow: hidden;
   padding-left: 10px;
   display: grid;
-  height: 10vh;
+  height: $row-height;
   grid-template-columns: repeat(auto-fill, 3.1%);
   grid-gap: 1px;
   align-content: center;

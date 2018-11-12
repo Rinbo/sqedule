@@ -6,22 +6,18 @@ class SchedulesController < ApplicationController
     redirect_to schedule_path(@current_period) if user_signed_in?    
   end
 
-  def new
-    @schedule = Schedule.new
-  end
-
   def show
     current_id = params[:id].to_i
     @schedule = Schedule.find(current_id)
     @next_month = get_another_month(current_id + 1)
     @prev_month = get_another_month(current_id - 1)
     @staffs = current_user.staffs.all
-    @staff = current_user.staffs.new
     @patterns = current_user.patterns.all
-    @pattern = current_user.patterns.new
     @shift = Shift.new
     @shifts = Shift.all
-    @date_array = get_schedule_header(@schedule)        
+    @date_array = get_schedule_header(@schedule)
+    @assignments = Assignment.all
+
   end
 
   def create

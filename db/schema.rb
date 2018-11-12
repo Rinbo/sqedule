@@ -10,19 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_121639) do
+ActiveRecord::Schema.define(version: 2018_11_11_191551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "staff_id"
+    t.boolean "locked_shift_id"
+    t.boolean "off"
+    t.string "shift"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date"
+    t.index ["staff_id"], name: "index_assignments_on_staff_id"
+  end
+
   create_table "patterns", force: :cascade do |t|
     t.time "shift_start"
-    t.integer "shift_length"
-    t.integer "break_length"
-    t.boolean "cleaning", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.time "break_length"
+    t.time "shift_length"
+    t.string "primary_role"
     t.index ["user_id"], name: "index_patterns_on_user_id"
   end
 
@@ -44,12 +55,13 @@ ActiveRecord::Schema.define(version: 2018_11_09_121639) do
 
   create_table "staffs", force: :cascade do |t|
     t.string "name"
-    t.boolean "cleaning", default: false
     t.date "employment_end"
     t.integer "shift_preference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "primary_role"
+    t.text "roles", default: [], array: true
     t.index ["user_id"], name: "index_staffs_on_user_id"
   end
 
@@ -65,6 +77,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_121639) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "assignments", "staffs"
   add_foreign_key "patterns", "users"
   add_foreign_key "shifts", "patterns"
   add_foreign_key "staffs", "users"

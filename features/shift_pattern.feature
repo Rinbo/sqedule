@@ -16,10 +16,11 @@ Feature: Shift Pattern
 
   Scenario: A user creates a shift pattern
     Given I visit the first planning period
+    And I click on "add-pattern"
     And I fill in "Shift start" with "06:00:AM"
-    And I fill in "Shift length" with "8"
-    And I fill in "Break length" with "1"
-    And I click checkbox "cleaning"
+    And I fill in "shift-length" with "8"
+    And I fill in "break-length" with "1"
+    And I select "Selling" from "primary-role"
     And I click on "Create pattern"
     Then I should see "New shift pattern was successfully created"
    
