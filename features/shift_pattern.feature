@@ -14,10 +14,11 @@ Feature: Shift Pattern
     
     And I am logged in as "user@example.com"
 
+  @javascript
   Scenario: A user creates a shift pattern
     Given I visit the first planning period
     And I click on "add-pattern"
-    And I fill in "Shift start" with "06:00:AM"
+    And I fill in "shift-start" with formatted time
     And I fill in "shift-length" with "8"
     And I fill in "break-length" with "1"
     And I select "Selling" from "primary-role"

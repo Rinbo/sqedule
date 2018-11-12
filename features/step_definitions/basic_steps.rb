@@ -99,3 +99,12 @@ Then("I click on assignment edit link") do
     click_link "assignment_#{Assignment.last.id}"
 end
 
+Given("I fill in {string} with formatted time") do |field|
+    element = page.find_by_id(field)
+    element.send_keys :up
+    element.send_keys :tab
+    element.send_keys :up
+    element.send_keys :tab
+    element.send_keys :up
+end
+

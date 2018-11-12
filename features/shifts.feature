@@ -21,7 +21,8 @@ Feature: Shift Pattern
     Scenario: A user can create a default shift by just clicking the plus button on a shift           
       And I click on a new shift      
       Then I should see "New shift was successfully created"
-
+      
+    @javascript
     Scenario: A user can update a shift
       And I click on a new shift
       Then I should see "New shift was successfully created"

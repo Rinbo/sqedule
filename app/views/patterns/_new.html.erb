@@ -2,7 +2,7 @@
   <div class="sqedule-form-container">  
     <%= form_with(model: @pattern, local: true, class: 'sqedule-form') do |form| %>
       <%= form.label :shift_start, class: "sqedule-label" %>
-      <%= form.time_field :shift_start, class: "sqedule-input"%>
+      <%= form.time_field :shift_start, class: "sqedule-input", id: "shift-start"%>
       <%= form.label :shift_length, value: "Shift length (h)", class: "sqedule-label" %>
       <%= form.number_field :shift_length, class: "sqedule-input", id: "shift-length" %>
       <%= form.label :break_length, value: "Break length (h)", class: "sqedule-label" %>
