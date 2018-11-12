@@ -13,7 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
 @import 'landing_page';
+@import 'schedule';
+@import 'pattern';
+@import 'shifts';
+@import 'scroll_bar';
+
 
 body {
   font-family: 'Share Tech', sans-serif;

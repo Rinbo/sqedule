@@ -12,9 +12,7 @@ class SchedulesController < ApplicationController
     @next_month = get_another_month(current_id + 1)
     @prev_month = get_another_month(current_id - 1)
     @staffs = current_user.staffs.all
-    @staff = current_user.staffs.new
     @patterns = current_user.patterns.all
-    @pattern = current_user.patterns.new
     @shift = Shift.new
     @shifts = Shift.all
     @date_array = get_schedule_header(@schedule)

@@ -1,0 +1,12 @@
+<div class="w-full max-w-lg container mx-auto px-4 mt-10">  
+  <%= form_with(model: @pattern, local: true, class: 'sqedule-form') do |form| %>
+    <%= form.label :shift_start, class: "sqedule-label" %>
+    <%= form.time_field :shift_start, class: "sqedule-input"%>
+    <%= form.label :shift_length, value: "Shift length (h)", class: "sqedule-label" %>
+    <%= form.number_field :shift_length, class: "sqedule-input", id: "shift-length" %>
+    <%= form.label :break_length, value: "Break length (h)", class: "sqedule-label" %>
+    <%= form.number_field :break_length, class: "sqedule-input", id: "break-length" %>
+    <%= form.select :primary_role, ["Cleaning", "Selling", "Teaching"], {include_blank: 'Primary Role'}, class: "block appearance-none mt-4 bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline", id: "primary-role" %>
+    <%= form.submit value: "Create pattern", class: "btn btn-blue mt-4" %>
+  <% end %>
+</div>

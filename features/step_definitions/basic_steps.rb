@@ -84,6 +84,10 @@ end
 Given("I click on a new shift") do
     click_on "#{Schedule.last.period}-01_#{Pattern.last.id}"
 end
+
+Given("I select {string} from {string}") do |option, list|
+    select option, from: list
+end
   
 Given("I click on a new assignment") do
     click_on "#{Schedule.last.period}-01_#{Staff.last.id}"

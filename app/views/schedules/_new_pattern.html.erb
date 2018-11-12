@@ -2,19 +2,18 @@
 
   <div class="field">
     <%= form.label :shift_start %>
-    <%= form.time_field :shift_start, class: "pattern-input"%>
+    <%= form.time_field :shift_start, class: "input-field"%>
   </div>
   <div class="field">
-    <%= form.label :shift_length %>
-    <%= form.number_field :shift_length, class: "pattern-input" %>
+    <%= form.label :shift_length, value: "Shift length (h)" %>
+    <%= form.number_field :shift_length, class: "input-field" %>
   </div>
   <div class="field">
-    <%= form.label :break_length %>
-    <%= form.number_field :break_length, class: "pattern-input" %>
+    <%= form.label :break_length, value: "Break length (h)" %>
+    <%= form.number_field :break_length, class: "input-field" %>
   </div>
   <div class="field">
-    <%= form.label :cleaning %>
-    <%= form.check_box :cleaning, class: "pattern-checkbox", id: "cleaning" %>
+    <%= form.select :primary_role, ["Cleaning", "Selling", "Teaching"], {include_blank: 'Primary Role'}, class: "block appearance-none mt-4 bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline", id: "primary-role" %>
   </div>
 
   <div class="field">

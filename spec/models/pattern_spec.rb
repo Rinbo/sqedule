@@ -8,6 +8,7 @@ RSpec.describe Pattern, type: :model do
     it { is_expected.to have_db_column :break_length }
     it { is_expected.to have_db_column :created_at }
     it { is_expected.to have_db_column :updated_at }
+    it { is_expected.to have_db_column :primary_role }
     it { is_expected.to have_db_column :user_id }
   end
 
