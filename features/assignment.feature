@@ -23,7 +23,5 @@ Feature: Assignment
       And I click on a new assignment      
       Then I am on assignment page
       And I click checkbox "staff-off"
-      And I fill in "Shift" with "2"
-      And I click checkbox "locked-shift"
       And I click on "Create"
       Then I should see "New assignment was successfully created"
