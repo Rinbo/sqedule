@@ -11,3 +11,6 @@ end
 Then("I am on landing page") do
   expect(current_path).to eq root_path
 end
+
+Then("I am on assignment page") do 
+end
