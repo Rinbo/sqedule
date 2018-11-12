@@ -13,10 +13,10 @@ Feature: Assignment
       | 2018-11              | 
     
     Given the following staff are in the database
-      | name               |
-      | Rolf               |
+      | name               | user             |
+      | Rolf               | rolf@example.com |
 
-    And I am logged in as "user@example.com"
+    And I am logged in as "rolf@example.com"
 
     Scenario: A user can create an assignment
       Given I visit the first planning period
@@ -25,3 +25,7 @@ Feature: Assignment
       And I click checkbox "staff-off"
       And I click on "Create"
       Then I should see "New assignment was successfully created"
+      And I click on assignment edit link
+      And I click checkbox "staff-off"
+      And I click on "Update"
+      Then I should see "Assignment was successfully updated."
