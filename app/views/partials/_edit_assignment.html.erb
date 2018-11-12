@@ -23,6 +23,8 @@
             <%= form.check_box :locked_shift_id, class: "sqedule-checkbox" %>    
 
             <%= form.submit value: "Update", class: "btn btn-blue mt-4" %>   
+            <%= link_to "Delete", staff_assignment_path, method: :delete, class: "btn btn-blue mr-2 mt-4" %>   
+
             </div>
         <% end %>
     </div>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :staffs, only: [:create, :new] do
-    resources :assignments, only: [:create, :new, :edit, :update]
+    resources :assignments, only: [:create, :new, :edit, :update, :destroy]
   end
 
   root controller: :schedules, action: :index
