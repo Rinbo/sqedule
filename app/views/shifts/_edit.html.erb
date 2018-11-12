@@ -1,0 +1,25 @@
+<% content_for :modal_content do %>
+  <div class="container sqedule-form-container">
+    <h1 class= "text-center mt-6">Edit Shift</h1>
+    <%= form_with(model: [:pattern, @shift], scope: :shift, local: true, class: "sqedule-form") do |form| %>
+      <% if @shift.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
+          <ul>
+          <% @shift.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div> 
+      <% end %>
+      <%= form.label :staff_req, class: "sqedule-label" %>
+      <%= form.number_field :staff_req, placeholder: "Title", class: "sqedule-input" %>
+      <%= form.label :cleaning, class: "sqedule-label" %>
+      <%= form.check_box :cleaning, class: "sqedule-checkbox", id: "cleaning-tag" %>
+      <%= form.submit value: "Update", class: "btn btn-blue mt-4" %>
+      <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render partial: 'partials/modal' %>

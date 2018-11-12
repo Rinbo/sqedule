@@ -31,10 +31,14 @@ const closeModalListener = (element) => {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        location.reload()
+        location.reload();
     }
 }
 
-document.addEventListener('turbolinks:load', () => {
-    App.windowContent = document.getElementById('content');  
+document.addEventListener('turbolinks:load', () => {    
+    let displayPattern = document.getElementById('content');
+    let displayShift = document.getElementById('content');;
+    let patternForm;
+    let shiftForm;
+
 })

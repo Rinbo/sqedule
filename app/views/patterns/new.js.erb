@@ -1,12 +1,4 @@
-if (typeof patternDisplayForm !== undefined) {
-  patternForm = "<%= escape_javascript(render partial: 'new') %>"
-  displayPattern = document.getElementById('content');
-  modalPattern = document.getElementById('modal');
-} else {
-  let patternForm = "<%= escape_javascript(render partial: 'new') %>"
-  App.windowContent = document.getElementById('content');
-  let modalPattern = document.getElementById('modal');
-}
-
+patternForm = "<%= escape_javascript(render partial: 'new') %>"
+displayPattern = document.getElementById('content');
 displayPattern.innerHTML = patternForm;
-
+closeModalListener('cancel_modal');
