@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :shifts, only: [:show, :new, :create, :edit, :update]
   end
 
-  resources :staffs, only: [:create] do
+  resources :staffs, only: [:create, :new] do
     resources :assignments, only: [:create, :new, :edit, :update]
   end
 
