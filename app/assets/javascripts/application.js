@@ -34,3 +34,7 @@ window.onclick = function(event) {
         location.reload()
     }
 }
+
+document.addEventListener('turbolinks:load', () => {
+    App.windowContent = document.getElementById('content');  
+})
