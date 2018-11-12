@@ -1,0 +1,29 @@
+<% content_for :modal_content do %>
+  <div class="sqedule-form-container">
+    <h1 class= "text-center mt-6">Create Assignment</h1>
+      <%= form_with(url: staff_assignments_path, scope: :assignment, local: true, class: "sqedule-form") do |form| %>
+          <% if @assignment.errors.any? %>
+              <div id="error_explanation">
+              <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this shift from being saved:</h2>
+
+              <ul>
+              <% @assignment.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+              </ul>
+              </div> 
+          <% end %>
+          <%= form.label :off, class: "sqedule-label" %>
+          <%= form.check_box :off, id: "staff-off", class: "sqedule-checkbox" %>
+          <%= form.label :shift, class: "sqedule-label" %>
+          <%= form.select :shift, @shifts.collect {|s| [s.pattern.shift_start.strftime("%H:%M")] } , {include_blank: 'Choose shift'}, class: "sqedule-dropdown" %>      
+          <%= form.label :locked_shift_id, class: "sqedule-label" %>
+          <%= form.check_box :locked_shift_id, id: "locked-shift", class: "sqedule-checkbox" %>    
+          <%= form.hidden_field :date, value: @date %>
+
+          <%= form.submit value: "Create", class: "btn btn-blue mt-4" %>
+      <% end %>
+  </div>
+<% end %>
+
+<%= render 'partials/modal' %>

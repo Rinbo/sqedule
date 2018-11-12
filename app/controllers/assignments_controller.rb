@@ -1,4 +1,5 @@
 class AssignmentsController < ApplicationController
+  respond_to :js
 
   def new
     @assignment = Assignment.new

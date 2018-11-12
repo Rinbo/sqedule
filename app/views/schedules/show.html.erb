@@ -24,6 +24,7 @@
       <% @staffs.each do |staff| %>
         <div class="tile-grid sqedule-border"><%= render partial: 'new_assignments', locals: {staff: staff} %></div>
       <% end %>
+      <div id="user-forms"></div>
     </div>
   </div>
   <div class="shift-patterns sqedule-border-sections">
