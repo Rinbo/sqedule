@@ -1,6 +1,6 @@
 if (typeof patternDisplayForm !== undefined) {
   patternForm = "<%= escape_javascript(render partial: 'new') %>"
-  App.windowContent = document.getElementById('content');
+  displayPattern = document.getElementById('content');
   modalPattern = document.getElementById('modal');
 } else {
   let patternForm = "<%= escape_javascript(render partial: 'new') %>"
@@ -8,5 +8,5 @@ if (typeof patternDisplayForm !== undefined) {
   let modalPattern = document.getElementById('modal');
 }
 
-App.windowContent.innerHTML = patternForm;
+displayPattern.innerHTML = patternForm;
 
