@@ -21,7 +21,7 @@ class PatternsController < ApplicationController
     @pattern = Pattern.find(params[:id])
     if @pattern.destroy
       redirect_to root_path
-      flash[:notice] = "Pattern was successfully deleted."
+      flash[:notice] = "Shift pattern was successfully deleted."
     else
       render 'show'
       flash[:notice] = "Something went wrong. Pattern was not deleted."

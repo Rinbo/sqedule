@@ -19,7 +19,7 @@ Feature: Dated Shifts
     Given I visit the first planning period 
 
     @javascript
-    Scenario: A user can create a default shift by just clicking the plus button on a shift and then edit it           
+    Scenario: A user can perform CRUD actions on a dated shift       
       And I click on a new shift      
       Then I should see "New shift was successfully created"
       And I click on "1"

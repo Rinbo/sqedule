@@ -24,4 +24,6 @@ Feature: Shift Pattern
     And I select "Selling" from "primary-role"
     And I click on "Create pattern"
     Then I should see "New shift pattern was successfully created"
+    And I click on "Delete shift"
+    Then I should see "Shift pattern was successfully deleted."
    
