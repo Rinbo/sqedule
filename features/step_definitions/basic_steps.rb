@@ -49,6 +49,14 @@ Given("the following patterns are in the database") do |table|
     end   
 end
   
+Given("the following staff are in the database") do |table|
+    table.hashes.each do |staff_hash|
+        @user = User.find_by(email: staff_hash[:user])
+        staff_hash.except!("user")
+        create(:staff, staff_hash.merge(user: @user))
+    end   
+end
+
 Then("I am on the Log in page") do
     visit new_user_session_path
 end
@@ -67,7 +75,7 @@ Given("I visit the first planning period") do
   end
   
 Given("I click checkbox {string}") do |checkbox|
-    check checkbox 
+    check checkbox
 end
 
 Given("I visit the schedule show page {string}") do |period|
@@ -78,3 +86,8 @@ end
 Given("I click on a new shift") do
     click_on "#{Schedule.last.period}-01_#{Pattern.last.id}"
 end
+  
+Given("I click on a new assignment") do
+    click_on "#{Schedule.last.period}-01_#{Staff.last.id}"
+end
+

@@ -14,11 +14,11 @@
     <% end %>
      <div class="mx-auto">
         <%= form.label :off, class: "block text-grey-darker text-sm font-bold mb-2" %>
-        <%= form.check_box :off, class: "w-8 h-8 ml-2" %>
+        <%= form.check_box :off, id: "staff-off", class: "w-8 h-8 ml-2" %>
         <%= form.label :shift, class: "block text-grey-darker text-sm font-bold mb-2 mt-4" %>
-        <%= form.text_field :shift, class: "w-8 h-8 ml-2", id: "cleaning-tag" %>
+        <%= form.text_field :shift, class: "w-8 h-8 ml-2"%>
         <%= form.label :locked_shift_id, class: "block text-grey-darker text-sm font-bold mb-2 mt-4" %>
-        <%= form.check_box :locked_shift_id, class: "w-8 h-8 ml-2" %>    
+        <%= form.check_box :locked_shift_id, id: "locked-shift", class: "w-8 h-8 ml-2" %>    
         <%= form.hidden_field :date, value: @date %>
 
         <%= form.submit value: "Create", class: "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 my-4 rounded focus:outline-none focus:shadow-outline block" %>
