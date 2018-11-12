@@ -26,4 +26,8 @@ Feature: Dated Shifts
       And I fill in "Staff req" with "3"
       And I click on "Update"
       Then I should see "Shift was successfully updated."
+      Then wait
+      And I click on "3"
+      And I click on "Delete"
+      Then I should see "Shift was successfully deleted"
       

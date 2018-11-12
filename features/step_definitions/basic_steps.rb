@@ -108,3 +108,7 @@ Given("I fill in {string} with formatted time") do |field|
     element.send_keys :up
 end
 
+Then("wait") do
+    sleep 1
+end
+
