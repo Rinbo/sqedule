@@ -18,6 +18,7 @@
       <%= form.check_box :cleaning, class: "sqedule-checkbox", id: "cleaning-tag" %>
       <%= form.submit value: "Update", class: "btn btn-blue mt-4" %>
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
+      <%= link_to "Delete shift", pattern_shift_path(@shift),  method: :delete, class: "btn btn-red ml-8 no-underline" %>
     <% end %>
   </div>
 <% end %>
