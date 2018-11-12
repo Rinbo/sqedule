@@ -1,6 +1,6 @@
-<div class="container mx-auto">
+<div class="sqedule-form-container">
   <h1 class= "text-center mt-6">Edit Assignments</h1>
-  <%= form_with(model: [:staff, @assignment], scope: :assignment, local: true, class: "px-4 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mt-6") do |form| %>
+  <%= form_with(model: [:staff, @assignment], scope: :assignment, local: true, class: "sqedule-form") do |form| %>
     <% if @assignment.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
@@ -14,14 +14,14 @@
     <% end %>
 
     <div class="mx-auto">
-      <%= form.label :off, class: "block text-grey-darker text-sm font-bold mb-2" %>
-      <%= form.check_box :off, class: "w-8 h-8 ml-2" %>
-      <%= form.label :shift, class: "block text-grey-darker text-sm font-bold mb-2 mt-4" %>
-      <%= form.text_field :shift, class: "w-8 h-8 ml-2" %>
-      <%= form.label :locked_shift_id, class: "block text-grey-darker text-sm font-bold mb-2 mt-4" %>
-      <%= form.check_box :locked_shift_id, class: "w-8 h-8 ml-2" %>    
+      <%= form.label :off, class: "sqedule-label" %>
+      <%= form.check_box :off, class: "sqedule-checkbox", id: "staff-off" %>
+      <%= form.label :shift, class: "sqedule-label" %>
+      <%= form.select :shift, @shifts.collect {|s| [s.pattern.shift_start.strftime("%H:%m")] } , {include_blank: 'Choose shift'}, class: "sqedule-dropdown" %>      
+      <%= form.label :locked_shift_id, class: "sqedule-label" %>
+      <%= form.check_box :locked_shift_id, class: "sqedule-checkbox" %>    
 
-      <%= form.submit value: "Update", class: "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 my-4 rounded focus:outline-none focus:shadow-outline block" %>   
+      <%= form.submit value: "Update", class: "btn btn-blue mt-4" %>   
     </div>
   <% end %>
 </div>

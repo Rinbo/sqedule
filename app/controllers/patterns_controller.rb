@@ -9,7 +9,7 @@ class PatternsController < ApplicationController
     @pattern = current_user.patterns.create(pattern_params)
 
     if @pattern.persisted?
-      redirect_to request.referrer
+      redirect_to root_path
       flash[:notice] = "New shift pattern was successfully created"
     else
       redirect_to root_path

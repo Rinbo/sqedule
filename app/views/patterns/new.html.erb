@@ -1,4 +1,4 @@
-<div class="w-full max-w-lg container mx-auto px-4 mt-10">  
+<div class="sqedule-form-container">  
   <%= form_with(model: @pattern, local: true, class: 'sqedule-form') do |form| %>
     <%= form.label :shift_start, class: "sqedule-label" %>
     <%= form.time_field :shift_start, class: "sqedule-input"%>
