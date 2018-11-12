@@ -50,11 +50,9 @@ Given("the following patterns are in the database") do |table|
 end
   
 Given("the following staff are in the database") do |table|
-    table.hashes.each do |staff_hash|
-        @user = User.find_by(email: staff_hash[:user])
-        staff_hash.except!("user")
-        create(:staff, staff_hash.merge(user: @user))
-    end   
+    table.hashes.each do |staff|
+        create(:staff, staff)
+    end 
 end
 
 Then("I am on the Log in page") do
