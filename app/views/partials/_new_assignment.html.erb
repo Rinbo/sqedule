@@ -1,6 +1,5 @@
 <% content_for :modal_content do %>
   <div class="sqedule-form-container">
-    <h1 class= "text-center mt-6">Create Assignment</h1>
       <%= form_with(url: staff_assignments_path, scope: :assignment, local: true, class: "sqedule-form") do |form| %>
           <% if @assignment.errors.any? %>
               <div id="error_explanation">
@@ -13,6 +12,7 @@
               </ul>
               </div> 
           <% end %>
+          <h1 class= "block text-blue-dark text-xl text-center font-bold pb-2">Create Assignment</h1>
           <%= form.label :off, class: "sqedule-label" %>
           <%= form.check_box :off, id: "staff-off", class: "sqedule-checkbox" %>
           <%= form.label :shift, class: "sqedule-label" %>
