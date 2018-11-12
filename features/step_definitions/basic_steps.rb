@@ -50,8 +50,10 @@ Given("the following patterns are in the database") do |table|
 end
   
 Given("the following staff are in the database") do |table|
-    table.hashes.each do |staff|
-        create(:staff, staff)
+    table.hashes.each do |staff_hash|
+        @user = User.find_by(email: staff_hash[:user])
+        staff_hash.except!("user")
+        create(:staff, staff_hash.merge(user: @user))
     end 
 end
 
@@ -91,5 +93,9 @@ end
   
 Given("I click on a new assignment") do
     click_on "#{Schedule.last.period}-01_#{Staff.last.id}"
+end
+
+Then("I click on assignment edit link") do
+    click_link "assignment_#{Assignment.last.id}"
 end
 
