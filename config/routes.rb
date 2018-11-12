@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'assignments/create'
-  get 'assignments/new'
+
   devise_for :users, controllers: {
     sessions: :sessions,
     registrations: :registrations

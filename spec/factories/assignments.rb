@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :assignment do
-    staff { nil }
+    staff
     locked_shift_id { false }
     off { false }
     shift { "MyString" }
