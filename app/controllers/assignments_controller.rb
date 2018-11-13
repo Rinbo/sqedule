@@ -39,7 +39,7 @@ class AssignmentsController < ApplicationController
   def destroy
     @assignment = Assignment.find(params[:id])    
     if @assignment.destroy
-      redirect_to schedule_path(1)
+      redirect_to root_path
       flash[:notice] = "Assignment was successfully deleted."
     else
       render 'show'

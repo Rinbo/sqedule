@@ -13,12 +13,8 @@
               </div> 
           <% end %>
           <h1 class= "block text-blue-dark text-xl text-center font-bold pb-2">Create Assignment</h1>
-          <%= form.label :off, class: "sqedule-label" %>
-          <%= form.check_box :off, id: "staff-off", class: "sqedule-checkbox" %>
           <%= form.label :shift, class: "sqedule-label" %>
-          <%= form.select :shift, @shifts.collect {|s| [s.pattern.shift_start.strftime("%H:%M")] } , {include_blank: 'Choose shift'}, class: "sqedule-dropdown" %>      
-          <%= form.label :locked_shift_id, class: "sqedule-label" %>
-          <%= form.check_box :locked_shift_id, id: "locked-shift", class: "sqedule-checkbox" %>    
+          <%= form.select :shift, @shifts.collect {|s| [s.pattern.shift_start.strftime("%H:%M")] } << "OFF" << "VA", {include_blank: 'Choose shift'}, class: "sqedule-dropdown" %>      
           <%= form.hidden_field :date, value: @date %>
 
           <%= form.submit value: "Create", class: "btn btn-blue mt-4" %>
