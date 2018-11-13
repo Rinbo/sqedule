@@ -1,4 +1,4 @@
-Feature: Shift Pattern
+Feature: Dated Shifts
   As a store manager,
   in order to assign the no of people and competencies needed for a given day,
   I would like an interactive object per combination of day and shift pattern to be able to fill in my needs
@@ -18,15 +18,16 @@ Feature: Shift Pattern
     And I am logged in as "user@example.com"
     Given I visit the first planning period 
 
-    Scenario: A user can create a default shift by just clicking the plus button on a shift           
+    @javascript
+    Scenario: A user can perform CRUD actions on a dated shift       
       And I click on a new shift      
-      Then I should see "New shift was successfully created"
-
-    Scenario: A user can update a shift
-      And I click on a new shift
       Then I should see "New shift was successfully created"
       And I click on "1"
       And I fill in "Staff req" with "3"
       And I click on "Update"
       Then I should see "Shift was successfully updated."
+      Then wait
+      And I click on "3"
+      And I click on "Delete"
+      Then I should see "Shift was successfully deleted"
       
