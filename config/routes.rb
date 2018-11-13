@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :shifts, only: [:show, :new, :create, :edit, :update, :destroy]
   end
 
-  resources :staffs, only: [:create, :new] do
-    resources :assignments, only: [:create, :new, :edit, :update]
+  resources :staffs, only: [:create, :new, :destroy] do
+    resources :assignments, only: [:create, :new, :edit, :update, :destroy]
   end
 
   root controller: :schedules, action: :index

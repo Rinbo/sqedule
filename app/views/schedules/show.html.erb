@@ -16,14 +16,17 @@
         <div class="tile sqedule-border">
           <p class="text-2xl"><%= staff.name%></p>
           <p>Primary Role <%= staff.primary_role%></p>
+          <p><%= link_to "Delete staff", staff_path(staff),  method: :delete, class: "no-underline text-red" %>
+
         </div>
       <% end %>
-      <div class="add-tile sqedule-border"><%= link_to "+", new_staff_path, class: "btn btn-blue text-center w-48 no-underline", id: "add-staff" %></div>
+      <div class="add-tile sqedule-border"><%= link_to "Add Staff", new_staff_path, remote: :true, id: "add-staff", class: "btn btn-blue text-center w-48 no-underline" %></div>
     </div>
     <div class="assignment-section">
       <% @staffs.each do |staff| %>
         <div class="tile-grid sqedule-border"><%= render partial: 'new_assignments', locals: {staff: staff} %></div>
       <% end %>
+      <div id="user-forms"></div>
     </div>
   </div>
   <div class="shift-patterns sqedule-border-sections">
@@ -35,7 +38,7 @@
           <p><%= link_to "Delete shift", pattern_path(pattern),  method: :delete, class: "no-underline text-red" %>
         </div>      
       <% end %>
-      <div class="add-tile sqedule-border"><%= link_to "Add Shift", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", remote: true, id: "add-pattern" %></div>
+      <div class="add-tile sqedule-border"><%= link_to "Add Shift", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", remote: :true, id: "add-pattern" %></div>
     </div>
     <div class="shifts-section">
       <% @patterns.each do |pattern|%>

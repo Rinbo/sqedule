@@ -1,4 +1,5 @@
 class AssignmentsController < ApplicationController
+  respond_to :js
 
   def new
     @assignment = Assignment.new
@@ -34,7 +35,18 @@ class AssignmentsController < ApplicationController
       render 'edit'
     end
   end
-  
+
+  def destroy
+    @assignment = Assignment.find(params[:id])    
+    if @assignment.destroy
+      redirect_to root_path
+      flash[:notice] = "Assignment was successfully deleted."
+    else
+      render 'show'
+      flash[:notice] = "Something went wrong. Assignment was not deleted."
+    end
+  end
+
   private
 
   def assignment_params
