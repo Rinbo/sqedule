@@ -14,7 +14,7 @@ Chromedriver.set_version '2.36' unless ENV['CI'] == 'true'
 
 
 chrome_options = %w(no-sandbox disable-popup-blocking disable-infobars)
-chrome_options << 'headless' if ENV['CI'] == 'true'
+chrome_options.concat(['headless', '--window-size=1920,1080', '--start-maximized']) if ENV['CI'] == 'true'
 
 Capybara.register_driver :chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
