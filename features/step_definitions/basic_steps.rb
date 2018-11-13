@@ -57,6 +57,12 @@ Given("the following staff are in the database") do |table|
     end 
 end
 
+Given("the following assignment are in the database") do |table|
+    table.hashes.each do |assignment|        
+        create(:assignment, assignment)
+  end
+end
+
 Then("I am on the Log in page") do
     visit new_user_session_path
 end

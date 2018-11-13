@@ -1,0 +1,17 @@
+<% content_for :modal_content do %>
+  <div class="sqedule-form-container">
+    <%= form_with(model: [ @staff ], local: true, class: 'sqedule-form') do |form| %>
+      <%= form.label :name, class: "sqedule-label" %>
+      <%= form.text_field :name, class: "sqedule-input"%>
+      <%= form.label :shift_preference, class: "sqedule-label" %>
+      <%= form.number_field :shift_preference, class: "sqedule-input" %>
+      <%= form.label :employment_end, class: "sqedule-label" %>
+      <%= form.date_field :employment_end, class: "sqedule-input" %>
+      <%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: 'Primary Role'}, class: "", id: "primary-role" %>
+      <%= form.submit value: "Add", class: "btn btn-blue mt-4" %>
+      <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
+
+    <% end %>
+  </div>
+<% end %>
+<%= render 'partials/modal' %>
