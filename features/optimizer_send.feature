@@ -24,7 +24,8 @@ Feature: Optimizer send feature
       | 2018-11-01         | Rolf             |
     And I am logged in as "user@example.com"
     And I visit the first planning period
-
+  
+  @javascript
   Scenario: A user hits Optimeize and gets displayed a summary of that period
     When I click on "Review"
     Then I should see "Summary of planning period"

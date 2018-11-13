@@ -1,6 +1,9 @@
 class SchedulesController < ApplicationController
   include SchedulesHelper
-   
+  
+  def new
+  end
+
   def index
     @current_period = Schedule.find_by(period: Time.new.strftime("%Y-%m"))    
     redirect_to schedule_path(@current_period) if user_signed_in?    
