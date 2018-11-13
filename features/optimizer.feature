@@ -31,10 +31,12 @@ Feature: Optimizer send feature
     When I click on "Review"
     Then I should see "Summary of planning period"
 
-  Scenario: A user hits Optimeize and sends it off for optimization
+  Scenario: A user clicks optimize and receives a response
     When I click on "Review"
     And I click on "Optimize"
-    Then I should see "Planning period is being optimized. Please wait..."
+    And I wait "3" seconds
+    Then I should see "Optimized schedule has been received"
+    
     
 
 

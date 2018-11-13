@@ -128,3 +128,7 @@ Then("wait") do
     sleep 1
 end
 
+When("I wait {string} seconds") do |seconds|
+    sleep seconds.to_i
+end
+

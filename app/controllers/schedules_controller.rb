@@ -1,7 +1,13 @@
 class SchedulesController < ApplicationController
   require 'json'
   include SchedulesHelper
+  respond_to :js
   
+  def optimizer
+    flash[:notice] = "Planning period is being optimized. Please wait..."
+    #@optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash].to_json)    
+  end
+
   def new
     period_start = get_period_date(Schedule.find(request.referrer.split("/")[-1].delete("?").to_i).period)
     period_end = period_start.end_of_month
@@ -12,6 +18,10 @@ class SchedulesController < ApplicationController
     assignments.each {|assignment| @optimizer_hash[:assignments].push(JSON.parse(assignment.to_json))}
     current_user.patterns.each {|p| @optimizer_hash[:patterns].push(JSON.parse(p.to_json))}
     current_user.staffs.each {|s| @optimizer_hash[:staffs].push(JSON.parse(s.to_json))}
+  end
+
+  def create
+
   end
 
   def index
@@ -30,10 +40,6 @@ class SchedulesController < ApplicationController
     @shifts = Shift.all
     @date_array = get_schedule_header(@schedule)
     @assignments = Assignment.all
-  end
-
-  def create
-    flash[:notice] = "Planning period is being optimized. Please wait..."
   end
 
   private
