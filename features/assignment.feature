@@ -13,10 +13,6 @@ Feature: Assignment
       | period               |
       | 2018-11              | 
     
-    # Given the following assignment are in the database
-    #   | shift              | staff_id |
-    #   | 08:00              | 1        | 
-    
     Given the following staff are in the database
       | name               | user             |
       | Rolf               | rolf@example.com |

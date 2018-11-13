@@ -57,10 +57,20 @@ Given("the following staff are in the database") do |table|
     end 
 end
 
-Given("the following assignment are in the database") do |table|
-    table.hashes.each do |assignment|        
-        create(:assignment, assignment)
-  end
+Given("the following shifts are in the database") do |table|
+    table.hashes.each do |shifts_hash|
+        @pattern = Pattern.find_by(shift_start: shifts_hash[:pattern])
+        shifts_hash.except!("pattern")
+        create(:shift, shifts_hash.merge(pattern: @pattern))
+    end
+end
+  
+Given("the following assignments are in the database") do |table|
+    table.hashes.each do |assignments_hash|
+        @staff = Staff.find_by(name: assignments_hash[:staff])
+        assignments_hash.except!("staff")
+        create(:assignment, assignments_hash.merge(staff: @staff))
+    end
 end
 
 Then("I am on the Log in page") do

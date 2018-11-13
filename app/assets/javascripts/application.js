@@ -37,8 +37,11 @@ window.onclick = function(event) {
 
 document.addEventListener('turbolinks:load', () => {    
     let displayPattern = document.getElementById('content');
-    let displayShift = document.getElementById('content');;
+    let displayShift = document.getElementById('content');    
+    let displaySendOptimizer = document.getElementById("content");
+    let displayGetOptimizer = document.getElementById("content");
     let patternForm;
     let shiftForm;
-
+    let sendOptimizerForm;
+    let getOptimizerForm;    
 })

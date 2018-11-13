@@ -1,0 +1,9 @@
+<% content_for :modal_content do %>
+  <div class="bg-white p-12 border border-cyan rounded">
+    <h3>Summary of planning period</h3>
+    <div class="my-8"><%= link_to "Optimize", schedules_path(@schedule), remote: true, method: 'post', class: "btn btn-blue no-underline" %></div>
+    <pre class="text-xs"><%= JSON.pretty_generate(@optimizer_hash) %><pre>    
+  </div>
+<% end %>
+
+<%= render partial: 'partials/modal'%>

@@ -24,6 +24,11 @@ module SchedulesHelper
     unformatted_period.to_datetime.strftime("%B, %Y")
   end
 
+  def get_period_date(unformatted_period)
+    unformatted_period += "-01"
+    unformatted_period.to_date    
+  end
+
 
 
 end
