@@ -33,14 +33,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = current_user.schedules.create(schedule_params)
-    if @schedule.persisted?
-      redirect_to @schedule
-      flash[:notice] = "New schedule successfully created"
-    else
-      render :new
-      flash[:notice] = "Something went wrong"
-    end
+    flash[:notice] = "Planning period is being optimized. Please wait..."
   end
 
   private

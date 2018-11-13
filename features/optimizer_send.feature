@@ -34,7 +34,7 @@ Feature: Optimizer send feature
   Scenario: A user hits Optimeize and sends it off for optimization
     When I click on "Review"
     And I click on "Optimize"
-    Then I should see "Planning period is being optimized..."
+    Then I should see "Planning period is being optimized. Please wait..."
     
 
 
