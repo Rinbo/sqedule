@@ -18,7 +18,7 @@
           <p>Primary Role <%= staff.primary_role%></p>
         </div>
       <% end %>
-      <div class="add-tile sqedule-border"><%= link_to "Add Staff", new_staff_path, remote: :true, class: "btn btn-blue text-center w-48 no-underline", id: "add-staff" %></div>
+      <div class="add-tile sqedule-border"><%= link_to "Add Staff", new_staff_path, remote: :true, id: "add-staff", class: "btn btn-blue text-center w-48 no-underline" %></div>
     </div>
     <div class="assignment-section">
       <% @staffs.each do |staff| %>
@@ -36,7 +36,7 @@
           <p><%= link_to "Delete shift", pattern_path(pattern),  method: :delete, class: "no-underline text-red" %>
         </div>      
       <% end %>
-      <div class="add-tile sqedule-border"><%= link_to "Add Shift", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", remote: true, id: "add-pattern" %></div>
+      <div class="add-tile sqedule-border"><%= link_to "Add Shift", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", remote: :true, id: "add-pattern" %></div>
     </div>
     <div class="shifts-section">
       <% @patterns.each do |pattern|%>

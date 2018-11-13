@@ -1,30 +1,28 @@
 <% content_for :modal_content do %>
-    <div class="sqedule-form-container">
-        <%= form_with(model: [:staff, @assignment], scope: :assignment, local: true, class: "sqedule-form") do |form| %>
-            <% if @assignment.errors.any? %>
-            <div id="error_explanation">
-                <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+  <div class="sqedule-form-container">
+    <%= form_with(model: [:staff, @assignment], scope: :assignment, local: true, class: "sqedule-form") do |form| %>
+      <% if @assignment.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
 
-                <ul>
-                <% @assignment.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-                </ul>
-            </div> 
-            <% end %>
+          <ul>
+            <% @assignment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+      <% end %>
+          </ul>
+      </div> 
+    <% end %>
 
-            <div class="mx-auto">
-            <h1 class= "block text-blue-dark text-xl text-center font-bold pb-2">Edit Assignments</h1>
-            <%= form.label :shift, class: "sqedule-label" %>
-            <%= form.select :shift, @shifts.collect {|s| [s.pattern.shift_start.strftime("%H:%m")] } << "OFF" << "VA", {include_blank: 'Choose shift'}, class: "sqedule-dropdown" %>      
+      <div class="mx-auto">
+      <h1 class= "block text-blue-dark text-xl text-center font-bold pb-2">Edit Assignment</h1>
+      <%= form.label :shift, class: "sqedule-label" %>
+      <%= form.select :shift, @shifts.collect {|s| [s.pattern.shift_start.strftime("%H:%m")] } << "OFF" << "VA", {include_blank: 'Add assignment'}, id: "dropdown", class: "sqedule-dropdown" %>      
 
-            <%= form.submit value: "Update", class: "btn btn-blue mt-4" %>   
-            <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
-            <%= link_to "Delete", staff_assignment_path, method: :delete, class: "btn btn-red ml-8 no-underline" %>   
-
-            </div>
-        <% end %>
-    </div>
+      <%= form.submit value: "Update", class: "btn btn-blue mt-4" %>   
+      <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
+      <%= link_to "Delete", staff_assignment_path, method: :delete, class: "btn btn-red ml-8 no-underline" %>   
+      </div>
+    <% end %>
+  </div>
 <% end %>
-
 <%= render 'partials/modal' %>

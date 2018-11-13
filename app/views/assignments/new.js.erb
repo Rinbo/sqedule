@@ -1,5 +1,4 @@
 let assignmentNewForm = "<%= escape_javascript(render partial: 'new_assignment') %>"
 let displayElementAssignmentNew = document.getElementById('user-forms')
-
 displayElementAssignmentNew.innerHTML = assignmentNewForm;
-
+closeModalListener('cancel_modal');

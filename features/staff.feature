@@ -12,7 +12,7 @@ Feature: Staff view
       | 2018-11              | 
     And I am logged in as "user@example.com"
 
-  
+  @javascript
   Scenario: A user can add staff members in schedule view
     Given I visit the first planning period
     And I click on "add-staff"
