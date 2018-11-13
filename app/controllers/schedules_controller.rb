@@ -3,8 +3,10 @@ class SchedulesController < ApplicationController
   include SchedulesHelper
   
   def new
-    shifts = current_user.patterns.collect {|p| p.shifts}.flatten
-    assignments = current_user.staffs.collect {|s| s.assignments}.flatten    
+    period_start = get_period_date(Schedule.find(request.referrer.split("/")[-1].delete("?").to_i).period)
+    period_end = period_start.end_of_month
+    shifts = Shift.where(pattern_id: current_user.patterns, date: (period_start..period_end))
+    assignments = Assignment.where(staff_id: current_user.staffs, date: (period_start..period_end))
     @optimizer_hash = {shifts: [], assignments: [], patterns: [], staffs: []}
     shifts.each {|shift| @optimizer_hash[:shifts].push(JSON.parse(shift.to_json))}
     assignments.each {|assignment| @optimizer_hash[:assignments].push(JSON.parse(assignment.to_json))}
@@ -18,10 +20,10 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    current_id = params[:id].to_i
-    @schedule = Schedule.find(current_id)
-    @next_month = get_another_month(current_id + 1)
-    @prev_month = get_another_month(current_id - 1)
+    @current_id = params[:id].to_i
+    @schedule = Schedule.find(@current_id)
+    @next_month = get_another_month(@current_id + 1)
+    @prev_month = get_another_month(@current_id - 1)
     @staffs = current_user.staffs.all
     @patterns = current_user.patterns.all
     @shift = Shift.new
