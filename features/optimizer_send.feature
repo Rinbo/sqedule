@@ -1,3 +1,4 @@
+@javascript
 Feature: Optimizer send feature
   As a store manager
   In order to get a schedule for a given planning period
@@ -25,7 +26,7 @@ Feature: Optimizer send feature
     And I am logged in as "user@example.com"
     And I visit the first planning period
   
-  @javascript
+
   Scenario: A user hits Optimeize and gets displayed a summary of that period
     When I click on "Review"
     Then I should see "Summary of planning period"
