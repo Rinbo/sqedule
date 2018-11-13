@@ -1,0 +1,4 @@
+let assignmentEditForm = "<%= escape_javascript(render partial: 'edit_assignment') %>"
+let displayElementAssignmentEdit = document.getElementById('user-forms')
+displayElementAssignmentEdit.innerHTML = assignmentEditForm;
+closeModalListener('cancel_modal');
