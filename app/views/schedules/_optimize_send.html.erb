@@ -1,7 +1,10 @@
 <% content_for :modal_content do %>
   <div class="bg-white p-12 border border-cyan rounded">
-    <p>Summary of planning period</p>
-    <p><%= link_to "Optimize", "#" %></p>
+    <h3>Summary of planning period</h3>
+    <form action="#">
+      <input type="submit" value="Optimize" class="btn btn-blue my-4">      
+    </form>
+    <pre class="text-xs"><%= JSON.pretty_generate(@optimizer_hash) %><pre>    
   </div>
 <% end %>
 

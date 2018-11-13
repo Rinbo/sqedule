@@ -1,7 +1,15 @@
 class SchedulesController < ApplicationController
+  require 'json'
   include SchedulesHelper
   
   def new
+    shifts = current_user.patterns.collect {|p| p.shifts}.flatten
+    assignments = current_user.staffs.collect {|s| s.assignments}.flatten    
+    @optimizer_hash = {shifts: [], assignments: [], patterns: [], staffs: []}
+    shifts.each {|shift| @optimizer_hash[:shifts].push(JSON.parse(shift.to_json))}
+    assignments.each {|assignment| @optimizer_hash[:assignments].push(JSON.parse(assignment.to_json))}
+    current_user.patterns.each {|p| @optimizer_hash[:patterns].push(JSON.parse(p.to_json))}
+    current_user.staffs.each {|s| @optimizer_hash[:staffs].push(JSON.parse(s.to_json))}
   end
 
   def index
@@ -20,7 +28,6 @@ class SchedulesController < ApplicationController
     @shifts = Shift.all
     @date_array = get_schedule_header(@schedule)
     @assignments = Assignment.all
-
   end
 
   def create
