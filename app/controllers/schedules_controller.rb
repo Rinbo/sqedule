@@ -4,11 +4,13 @@ class SchedulesController < ApplicationController
   respond_to :js
   
   def optimizer
+    # Create an optimizer controller
     flash[:notice] = "Planning period is being optimized. Please wait..."
     #@optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash].to_json)    
   end
 
   def new
+    # Refactor this way of creating the JSON object
     period_start = get_period_date(Schedule.find(request.referrer.split("/")[-1].delete("?").to_i).period)
     period_end = period_start.end_of_month
     shifts = Shift.where(pattern_id: current_user.patterns, date: (period_start..period_end))
