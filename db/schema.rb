@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_130243) do
+ActiveRecord::Schema.define(version: 2018_11_14_143555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
     t.bigint "staff_id"
-    t.boolean "locked_shift_id"
-    t.boolean "off"
     t.string "shift"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
