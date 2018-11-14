@@ -16,7 +16,7 @@
         <div class="tile sqedule-border">
           <p class="text-2xl"><%= staff.name%></p>
           <p><%= staff.primary_role%></p>
-          <p><%= link_to "Delete staff", staff_path(staff),  method: :delete, class: "no-underline text-red" %>
+          <p><%= link_to "Delete staff", staff_path(staff),  method: :delete, class: "no-underline text-red", data: {confirm: 'Are you sure?'} %>
 
         </div>
       <% end %>
@@ -38,7 +38,7 @@
           <p><%= link_to "Delete shift", pattern_path(pattern),  method: :delete, class: "no-underline text-red" %>
         </div>      
       <% end %>
-      <div class="add-tile sqedule-border"><%= link_to "Add Shift", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", remote: :true, id: "add-pattern" %></div>
+      <div class="add-tile sqedule-border"><%= link_to "Add Shift", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", remote: :true, data: {confirm: 'Are you sure?'}, id: "add-pattern" %></div>
     </div>
     <div class="shifts-section">
       <% @patterns.each do |pattern|%>
