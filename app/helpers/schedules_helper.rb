@@ -29,6 +29,8 @@ module SchedulesHelper
     unformatted_period.to_date    
   end
 
-
+  def format_shift(shift)
+    return_array = shift.slice(0,11).split("-")
+  end
 
 end
