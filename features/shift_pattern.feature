@@ -20,7 +20,7 @@ Feature: Shift Pattern
     And I click on "add-pattern"
     And I fill in "shift-start" with formatted time
     And I fill in "shift-end" with formatted time
-    And I fill in "break-length" with "1"
+    And I fill in "break-length" with formatted time
     And I select "Selling" from "primary-role"
     And I click on "Create pattern"
     Then I should see "New shift pattern was successfully created"
