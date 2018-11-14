@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   get 'schedules/optimizer'
   root controller: :schedules, action: :index
   resources :schedules, only: [:index, :show, :create, :new,] 
-
+  resources :optimizer, only: [:create, :update]
 end
