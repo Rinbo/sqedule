@@ -5,8 +5,6 @@ RSpec.describe Assignment, type: :model do
   describe 'DB table' do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :date }
-    it { is_expected.to have_db_column :off }
-    it { is_expected.to have_db_column :locked_shift_id }
     it { is_expected.to have_db_column :created_at }
     it { is_expected.to have_db_column :updated_at }
     it { is_expected.to have_db_column :staff_id }

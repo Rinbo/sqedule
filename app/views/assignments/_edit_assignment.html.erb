@@ -16,7 +16,7 @@
       <div class="mx-auto">
       <h1 class= "block text-blue-dark text-xl text-center font-bold pb-2">Change Assignment</h1>
       <%= form.label :shift, class: "sqedule-label" %>
-      <%= form.select :shift, @shifts.collect {|s| ["#{s.pattern.shift_start.strftime("%H:%M")}-#{(s.pattern.shift_start + s.pattern.shift_length.hour * 3600).strftime("%H:%M")} #{s.pattern.primary_role}"] }.concat( ["VAC", "OFF", "OD", "NPP"] ) , {include_blank: false}, id: "dropdown", class: "sqedule-dropdown" %>      
+      <%= form.select :shift, @shifts.collect {|s| ["#{s.pattern.shift_start.strftime("%H:%M")}-#{(s.pattern.shift_end).strftime("%H:%M")} #{s.pattern.primary_role}"] }.concat( ["VAC", "OFF", "OD", "NPP"] ) , {include_blank: false}, id: "dropdown", class: "sqedule-dropdown" %>
 
       <%= form.submit value: "Update", class: "btn btn-blue mt-4" %>   
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>

@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_191551) do
+ActiveRecord::Schema.define(version: 2018_11_14_143555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
     t.bigint "staff_id"
-    t.boolean "locked_shift_id"
-    t.boolean "off"
     t.string "shift"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_191551) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.time "break_length"
-    t.time "shift_length"
+    t.time "shift_end"
     t.string "primary_role"
     t.index ["user_id"], name: "index_patterns_on_user_id"
   end
