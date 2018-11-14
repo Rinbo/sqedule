@@ -86,7 +86,7 @@ Given("I click {string}") do |link|
     click_on link
 end
 
-Given("I visit the first planning period") do   
+Given("I visit the first planning period") do
     visit schedule_path(Schedule.last)
   end
   
