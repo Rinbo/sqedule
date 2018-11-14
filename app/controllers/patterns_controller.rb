@@ -31,6 +31,6 @@ class PatternsController < ApplicationController
   private
 
   def pattern_params
-    params.require(:pattern).permit(:schedule_id, :shift_start, :shift_length, :break_length, :primary_role)
+    params.require(:pattern).permit(:schedule_id, :shift_start, :shift_end, :break_length, :primary_role)
   end
 end
