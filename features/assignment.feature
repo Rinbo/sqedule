@@ -27,11 +27,11 @@ Feature: Assignment
       And I click on "Assign"
       Then I should see "New assignment was successfully created"
       And I click on assignment edit link
-      And I choose "VA" on "dropdown"
+      And I choose "VAC" on "dropdown"
       And I click on "Update"
       Then I should see "Assignment was successfully updated."
       Then wait
-      And I click on "VA"
+      And I click on "VAC"
       And I click on "Delete"
       Then I should see "Assignment was successfully deleted."
    
