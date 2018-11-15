@@ -15,6 +15,22 @@ class StaffsController < ApplicationController
     end
   end
 
+  def edit
+    @staff = Staff.find(params[:id])
+  end
+  
+  def update
+    @staff = Staff.find(params[:id])
+    if @staff.update_attributes(staff_params)
+      flash[:notice] = "Staff member was successfully edited"
+      redirect_to root_path
+    else
+      flash[:error] = "Something went wrong"
+      render 'edit'
+    end
+  end
+  
+
   def destroy
     @staff = Staff.find(params[:id])
     if @staff.destroy

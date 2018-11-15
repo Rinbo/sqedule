@@ -25,9 +25,10 @@ Feature: Edit staff and shifts
 
   Scenario: A user can edit staff members in schedule view
     Given I visit the first planning period
-    When I click "edit staff"
-    And I fill in "Name" with "Oliver"
-    And I fill in "Shift preference" with "Oliver"
+    And I click "Edit staff"
+    When I fill in "Name" with "Oliver"
+    And I fill in "Shift preference" with "3"
     And I fill in "staff_employment_end" with formatted time
-    And I select "Manager" from "Primary Role"
+    And I select "Manager" from "primary-role"
+    And I click on "Update Staff"
     Then I should see "Staff member was successfully edited"
