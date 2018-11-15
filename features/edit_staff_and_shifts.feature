@@ -25,8 +25,7 @@ Feature: Edit staff and shifts
     And I visit the first planning period
 
   Scenario: A user can edit staff members in schedule view
-    Given I visit the first planning period
-    And I click "Edit staff" for "Rolf"
+    Given I click "Edit staff" for "Rolf"
     When I fill in "Name" with "Oliver"
     And I fill in "Shift preference" with "3"
     And I fill in "staff_employment_end" with formatted time
@@ -43,3 +42,12 @@ Feature: Edit staff and shifts
     And I select "Manager" from "primary-role"
     And I click on "Update Staff"
     Then I should see "has already been taken"
+
+  Scenario: A user can edit shift in schedule view
+    Given I click "Edit Shift" for "06:00"
+    And I fill in "shift-start" with formatted time
+    And I fill in "shift-end" with formatted time
+    And I fill in "break-length" with formatted time
+    And I select "Selling" from "primary-role"
+    And I click on "Update pattern"
+    Then I should see "New shift pattern was successfully created"

@@ -86,9 +86,16 @@ Given("I click {string}") do |link|
     click_on link
 end
 
-Given("I click {string} for {string}") do |link, staff_name|
-    staff = Staff.find_by(name: staff_name)
-    dom_section = "#staff_#{staff.id}"
+Given("I click {string} for {string}") do |link, object|
+    case link
+    when "Edit staff"
+        staff = Staff.find_by(name: object)
+        dom_section = "#staff_#{staff.id}"
+    when "Edit shift"
+        binding.pry
+        shift = Shift.find_by(name: object)
+        dom_section = "#shift_#{shift.id}"
+    end
     within dom_section do
         click_on link
     end
