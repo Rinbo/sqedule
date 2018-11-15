@@ -34,8 +34,9 @@ Feature: Optimizer send feature
   Scenario: A user clicks optimize and receives a response
     When I click on "Review"
     And I click on "Optimize"
-    And I wait "3" seconds
-    Then I should see "Optimized schedule has been received"
+    Then I wait "3" seconds
+    Then a post request should have been made to "https://ca-endpoints.herokuapp.com/api/optimizers"
+    Then I should see "Response received without any updates"
     
     
 

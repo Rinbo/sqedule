@@ -18,6 +18,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'rest-client'
 
+
 group :development, :test do
   gem 'coveralls', require: false
   gem 'byebug'
@@ -31,6 +32,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'  
   gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'webmock'
 end
 
 group :development do

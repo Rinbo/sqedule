@@ -2,4 +2,10 @@ getOptimizerForm = "<%= escape_javascript(render partial: 'optimizer_get') %>"
 displayGetOptimizer = document.getElementById("content");
 displayGetOptimizer.innerHTML = getOptimizerForm;
 closeModalListener('cancel_modal');
+if (<%= @count %> > 0) {
+  document.getElementById('opt-title').innerText = "Schedule has been updated"
+  setTimeout(function () {
+      location.reload() 
+    }, 2000)
+  }
 
