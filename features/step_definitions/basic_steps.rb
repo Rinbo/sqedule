@@ -132,3 +132,7 @@ When("I wait {string} seconds") do |seconds|
     sleep seconds.to_i
 end
 
+Given("I confirm popup") do
+    page.driver.browser.switch_to.alert.accept
+  end
+

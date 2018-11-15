@@ -26,6 +26,7 @@ Feature: Staff view
     And I should see "Rolf Lassgård"
     Then wait
     And I click on "Delete staff"
+    And I confirm popup
     Then I should see "Staff was successfully deleted"
    
  
