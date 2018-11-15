@@ -27,8 +27,8 @@ class PatternsController < ApplicationController
         flash[:notice] = "Shift pattern was successfully updated"
         redirect_to root_path
       else
-        flash[:error] = "Something went wrong"
-        render 'edit'
+        flash[:notice] = @pattern.errors.messages
+        redirect_to root_path
       end
   end
   
