@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :assignments, only: [:create, :new, :edit, :update, :destroy]
   end
   
-  get 'schedules/optimizer'
+  post 'schedules/optimizer'
   root controller: :schedules, action: :index
   resources :schedules, only: [:index, :show, :create, :new,] 
   resources :optimizer, only: [:create, :update]

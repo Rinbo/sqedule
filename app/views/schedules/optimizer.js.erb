@@ -7,5 +7,10 @@ if (<%= @count %> > 0) {
   setTimeout(function () {
       location.reload() 
     }, 2000)
+  } else {
+      document.getElementById('opt-title').innerText = "Service unavailable"
+  setTimeout(function () {
+      location.reload() 
+    }, 2000)
   }
 

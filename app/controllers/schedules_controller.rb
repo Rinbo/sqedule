@@ -4,37 +4,37 @@ class SchedulesController < ApplicationController
   respond_to :js
   
   def optimizer
-    # Create an optimizer controller
     flash[:notice] = "Planning period is being optimized. Please wait..."
-    flash[:notice] = "Response received" if @optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash].to_json)
-
+    @optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash])
+    
     @count = 0
 
-    @optimized_response["assignments"].each do |assignment|
-      if assignment["id"].nil?
-        ##Create new assignment
-        @staff = Staff.find(assignment["staff_id"])
-        @staff.assignments.create(shift: assignment["shift"], date: assignment["date"])
-        @count += 1
-      else
-        ##Update assignment
-        @assignment= Assignment.find(assignment["id"])
-        @assignment.update(shift: assignment["shift"], date: assignment["date"])
-        @count += 1             
+    if Rails.env == 'test' || Rails.env == 'development'
+      @optimized_response["assignments"].each do |assignment|
+        if assignment["id"].nil?
+          ##Create new assignment
+          @staff = Staff.find(assignment["staff_id"])
+          @staff.assignments.create(shift: assignment["shift"], date: assignment["date"])
+          @count += 1
+        else
+          ##Update assignment
+          @assignment= Assignment.find(assignment["id"])
+          @assignment.update(shift: assignment["shift"], date: assignment["date"])
+          @count += 1             
+        end
       end
     end
 
     if @count > 0
       flash[:notice] = "Planning period has successfully updated with #{@count} new assignments"
     else
-      flash[:notice] = "Response received without any updates"
+      flash[:notice] = "No updates were made"
     end
+    @done = true
     render 'optimizer'
   end
 
   def new
-    
-    # Refactor this way of creating the JSON object
     period_start = get_period_date(Schedule.find(request.referrer.split("/")[-1].delete("?").to_i).period)
     period_end = period_start.end_of_month
     shifts = Shift.where(pattern_id: current_user.patterns, date: (period_start..period_end))
