@@ -1,5 +1,0 @@
-{
-  "cucumberautocomplete.steps": [
-    "features/step_definitions/*_steps.rb"
-  ]
-}
