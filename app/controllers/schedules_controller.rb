@@ -7,21 +7,23 @@ class SchedulesController < ApplicationController
     # Create an optimizer controller
     flash[:notice] = "Planning period is being optimized. Please wait..."
     flash[:notice] = "Response received" if @optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash].to_json)
-    # Wait for response!
+
     @count = 0
+
     @optimized_response["assignments"].each do |assignment|
       if assignment["id"].nil?
         ##Create new assignment
         @staff = Staff.find(assignment["staff_id"])
-        @staff.assignments.create(shift: assignment["shift"])
+        @staff.assignments.create(shift: assignment["shift"], date: assignment["date"])
         @count += 1
       else
         ##Update assignment
         @assignment= Assignment.find(assignment["id"])
-        @assignment.update(shift: assignment["shift"])
-        @count += 1      
+        @assignment.update(shift: assignment["shift"], date: assignment["date"])
+        @count += 1             
       end
     end
+
     if @count > 0
       flash[:notice] = "Planning period has successfully updated with #{@count} new assignments"
     else
@@ -31,6 +33,7 @@ class SchedulesController < ApplicationController
   end
 
   def new
+    
     # Refactor this way of creating the JSON object
     period_start = get_period_date(Schedule.find(request.referrer.split("/")[-1].delete("?").to_i).period)
     period_end = period_start.end_of_month

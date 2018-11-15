@@ -1,4 +1,4 @@
-@javascript
+@javascript @webhook
 Feature: Optimizer send feature
   As a store manager
   In order to get a schedule for a given planning period
