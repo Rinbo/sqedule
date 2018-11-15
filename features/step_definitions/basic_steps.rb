@@ -88,13 +88,12 @@ end
 
 Given("I click {string} for {string}") do |link, object|
     case link
+    when "Edit shift"
+        pattern = Pattern.find_by(shift_start: object)
+        dom_section = "#pattern_#{pattern.id}"
     when "Edit staff"
         staff = Staff.find_by(name: object)
         dom_section = "#staff_#{staff.id}"
-    when "Edit shift"
-        binding.pry
-        shift = Shift.find_by(name: object)
-        dom_section = "#shift_#{shift.id}"
     end
     within dom_section do
         click_on link

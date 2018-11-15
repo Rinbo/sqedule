@@ -44,10 +44,10 @@ Feature: Edit staff and shifts
     Then I should see "has already been taken"
 
   Scenario: A user can edit shift in schedule view
-    Given I click "Edit Shift" for "06:00"
+    Given I click "Edit shift" for "06:00"
     And I fill in "shift-start" with formatted time
     And I fill in "shift-end" with formatted time
     And I fill in "break-length" with formatted time
     And I select "Selling" from "primary-role"
-    And I click on "Update pattern"
-    Then I should see "New shift pattern was successfully created"
+    And I click on "Update Pattern"
+    Then I should see "Shift pattern was successfully updated"
