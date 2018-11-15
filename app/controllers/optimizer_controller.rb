@@ -1,4 +1,5 @@
 class OptimizerController < ApplicationController
+  
   def create
   end
 

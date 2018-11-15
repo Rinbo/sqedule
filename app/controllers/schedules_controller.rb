@@ -6,7 +6,7 @@ class SchedulesController < ApplicationController
   def optimizer
     # Create an optimizer controller
     flash[:notice] = "Planning period is being optimized. Please wait..."
-    #@optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash].to_json)    
+    @optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash].to_json)
   end
 
   def new
