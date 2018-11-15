@@ -20,9 +20,13 @@ Feature: Optimizer send feature
     Given the following staff are in the database
       | name               | user             |
       | Rolf               | user@example.com |
+      | Bengt              | user@example.com |
+      | Berit              | user@example.com |
+      | Ronda              | user@example.com |
+      
     Given the following assignments are in the database
       | date               | staff            |
-      | 2018-11-01         | Rolf             |
+      | 2018-11-02         | Rolf             |
     And I am logged in as "user@example.com"
     And I visit the first planning period
   
@@ -34,9 +38,10 @@ Feature: Optimizer send feature
   Scenario: A user clicks optimize and receives a response
     When I click on "Review"
     And I click on "Optimize"
-    Then I wait "3" seconds
+    Then I wait "1" seconds
     Then a post request should have been made to "https://ca-endpoints.herokuapp.com/api/optimizers"
-    Then I should see "Response received without any updates"
+    Then I wait "2" seconds
+    Then I should see "November, 2018"
     
     
 

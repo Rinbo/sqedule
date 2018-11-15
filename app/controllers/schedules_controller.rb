@@ -8,8 +8,8 @@ class SchedulesController < ApplicationController
     @optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash])
     
     @count = 0
-
     if Rails.env == 'test' || Rails.env == 'development'
+      begin
       @optimized_response["assignments"].each do |assignment|
         if assignment["id"].nil?
           ##Create new assignment
@@ -22,6 +22,8 @@ class SchedulesController < ApplicationController
           @assignment.update(shift: assignment["shift"], date: assignment["date"])
           @count += 1             
         end
+      end
+      rescue
       end
     end
 
