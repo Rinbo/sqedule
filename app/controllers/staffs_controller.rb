@@ -25,8 +25,8 @@ class StaffsController < ApplicationController
       flash[:notice] = "Staff member was successfully edited"
       redirect_to root_path
     else
-      flash[:error] = "Something went wrong"
-      render 'edit'
+      flash[:notice] = @staff.errors.messages
+      redirect_to root_path
     end
   end
   

@@ -86,6 +86,15 @@ Given("I click {string}") do |link|
     click_on link
 end
 
+Given("I click {string} for {string}") do |link, staff_name|
+    staff = Staff.find_by(name: staff_name)
+    dom_section = "#staff_#{staff.id}"
+    within dom_section do
+        click_on link
+    end
+end
+  
+
 Given("I visit the first planning period") do
     visit schedule_path(Schedule.last)
   end
