@@ -26,6 +26,5 @@ Feature: Shift Pattern
     Then I should see "New shift pattern was successfully created"
     And I click "Edit shift" for "13:01"
     And I click on "Delete shift"
-    And I confirm popup
     Then I should see "Shift pattern was successfully deleted."
 
