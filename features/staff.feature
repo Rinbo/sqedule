@@ -25,6 +25,7 @@ Feature: Staff view
     Then I should see "New staff member was successfully created"
     And I should see "Rolf Lassgård"
     Then wait
+    And I click "Edit staff" for "Rolf Lassgård"
     And I click on "Delete staff"
     Then I should see "Staff was successfully deleted"
 

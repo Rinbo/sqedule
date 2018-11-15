@@ -14,6 +14,9 @@
       
       <%= form.submit class: "btn btn-blue mt-4" %>
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
+      <% unless @pattern.id.nil? %>
+        <%= link_to "Delete shift", pattern_path(@pattern),  method: :delete, class: "btn btn-white" %>
+      <% end %>
     <% end %>
   </div>
 <% end %>
