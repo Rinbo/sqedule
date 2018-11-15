@@ -7,6 +7,22 @@ class SchedulesController < ApplicationController
     # Create an optimizer controller
     flash[:notice] = "Planning period is being optimized. Please wait..."
     @optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash].to_json)
+    # Wait for response!
+    count = 0
+    @optimized_response["assignments"].each do |assignment|
+      if assignment["id"].nil?
+        ##Create new assignment
+        @staff = Staff.find(assignment["staff_id"])
+        @staff.assignments.create(shift: assignment["shift"])
+        count += 1
+      else
+        ##Update assignment
+        @assignment= Assignment.find(assignment["id"])
+        @assignment.update(shift: assignment["shift"])
+        count += 1      
+      end
+    end
+    flash[:notice] = "Planning period has successfully updated with #{count} new assignments"
   end
 
   def new
