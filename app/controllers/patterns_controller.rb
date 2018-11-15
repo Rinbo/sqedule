@@ -17,6 +17,22 @@ class PatternsController < ApplicationController
     end
   end
 
+  def edit
+    @pattern = Pattern.find(params[:id])
+  end
+  
+  def update
+    @pattern = Pattern.find(params[:id])
+      if @pattern.update_attributes(pattern_params)
+        flash[:notice] = "Shift pattern was successfully updated"
+        redirect_to root_path
+      else
+        flash[:notice] = @pattern.errors.messages
+        redirect_to root_path
+      end
+  end
+  
+
   def destroy
     @pattern = Pattern.find(params[:id])
     if @pattern.destroy
