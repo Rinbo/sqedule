@@ -86,6 +86,21 @@ Given("I click {string}") do |link|
     click_on link
 end
 
+Given("I click {string} for {string}") do |link, object|
+    case link
+    when "Edit shift"
+        pattern = Pattern.find_by(shift_start: object)
+        dom_section = "#pattern_#{pattern.id}"
+    when "Edit staff"
+        staff = Staff.find_by(name: object)
+        dom_section = "#staff_#{staff.id}"
+    end
+    within dom_section do
+        click_on link
+    end
+end
+  
+
 Given("I visit the first planning period") do
     visit schedule_path(Schedule.last)
   end

@@ -8,9 +8,11 @@
       <%= form.label :employment_end, class: "sqedule-label" %>
       <%= form.date_field :employment_end, class: "sqedule-input" %>
       <%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: 'Primary Role'}, class: "", id: "primary-role" %>
-      <%= form.submit value: "Add", class: "btn btn-blue mt-4" %>
+      <%= form.submit class: "btn btn-blue mt-4" %>
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
-
+      <% unless @staff.id.nil? %>
+        <%= link_to "Delete staff", staff_path(@staff),  method: :delete, class: "btn btn-white" %>
+      <% end %>
     <% end %>
   </div>
 <% end %>

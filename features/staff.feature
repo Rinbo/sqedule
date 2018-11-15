@@ -9,11 +9,11 @@ Feature: Staff view
 
   Background:
     Given the following user is registered
-      | email               | password   | 
-      | user@example.com    | password   |
+      | email            | password |
+      | user@example.com | password |
     Given the following schedules are in the database
-      | period               | 
-      | 2018-11              | 
+      | period  |
+      | 2018-11 |
     And I am logged in as "user@example.com"
 
   @javascript
@@ -21,11 +21,11 @@ Feature: Staff view
     Given I visit the first planning period
     And I click on "add-staff"
     And I fill in "Name" with "Rolf Lassgård"
-    And I click on "Add"
+    And I click on "Create Staff"
     Then I should see "New staff member was successfully created"
     And I should see "Rolf Lassgård"
     Then wait
+    And I click "Edit staff" for "Rolf Lassgård"
     And I click on "Delete staff"
     Then I should see "Staff was successfully deleted"
-   
- 
+

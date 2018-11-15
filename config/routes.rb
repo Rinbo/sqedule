@@ -4,11 +4,11 @@ Rails.application.routes.draw do
     sessions: :sessions,
     registrations: :registrations
   }
-  resources :patterns, only: [:create, :new, :destroy] do
+  resources :patterns, only: [:create, :new, :edit, :update, :destroy] do
     resources :shifts, only: [:show, :new, :create, :edit, :update, :destroy]
   end
 
-  resources :staffs, only: [:create, :new, :destroy] do
+  resources :staffs, only: [:create, :new, :edit, :update, :destroy] do
     resources :assignments, only: [:create, :new, :edit, :update, :destroy]
   end
 
