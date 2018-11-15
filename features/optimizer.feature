@@ -1,8 +1,8 @@
 @javascript @webhook
 Feature: Optimizer send feature
   As a store manager
-  In order to get a schedule for a given planning period
-  I would like an optimizer button
+  In order to get an optimized schedule for a given planning period
+  I would to send my planning data to an API endpoint and receive an optimized schedule
 
   Background:
     Given the following user is registered
