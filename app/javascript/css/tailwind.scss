@@ -104,8 +104,9 @@
 }
 
 .sqedule-dropdown {
-  @apply block appearance-none mt-4 bg-white border border-grey-light px-4 py-2 pr-8 rounded shadow leading-tight;
+  @apply block appearance-none bg-white border border-grey-light px-4 py-2 pr-8 rounded shadow leading-tight;
 }
+
 
 .sqedule-dropdown:focus {
   @apply outline-none shadow-outline;
