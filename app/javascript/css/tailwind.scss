@@ -24,7 +24,7 @@
 }
 
 .btn-optimizer {
-  @apply btn btn-blue no-underline uppercase text-center mr-10 w-24 h-12 leading-loose;
+  @apply btn btn-blue no-underline uppercase text-center mr-10 w-24;
 }
 
 .btn-white {
@@ -68,15 +68,15 @@
 }
 
 .sqedule-border {
-  @apply bg-white shadow-md rounded px-2 pt-2 pb-2 mb-2;
+  @apply bg-white shadow-md rounded pt-2 pb-2 mb-1;
 }
 
 .sqedule-border-sections {
-  @apply bg-grey-lightest shadow-md rounded px-2 pt-2 pb-2 mb-2;
+  @apply bg-grey-lightest shadow-md rounded px-2 pt-2 pb-2 mb-1;
 }
 
 .sqedule-border-tranparent {
-  @apply bg-transparent rounded px-2 pt-2 mb-2;
+  @apply bg-transparent rounded px-2 pt-2 mb-1;
 }
 
 .month-step {

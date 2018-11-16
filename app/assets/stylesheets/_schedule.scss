@@ -1,4 +1,4 @@
-$row-height: 8vh;
+$row-height: 5vh;
 
 .grid-container {
     display: grid;
@@ -21,8 +21,8 @@ $row-height: 8vh;
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: 20% 80%;
-    grid-column-gap: 2px;
+    grid-template-columns: 15% 85%;
+    grid-column-gap: 1px;
     grid-template-rows: 100%;
     justify-content: center;
     align-content: end;
@@ -33,8 +33,8 @@ $row-height: 8vh;
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: 20% 80%;
-    grid-column-gap: 2px;
+    grid-template-columns: 15% 85%;
+    grid-column-gap: 1px;
     grid-template-rows: 100%;
     justify-content: center;
     align-content: start;
@@ -54,9 +54,9 @@ $row-height: 8vh;
     overflow-y: scroll;
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
     grid-template-rows: 100%;
-    grid-column-gap: 2px;
+    grid-column-gap: 1px;
     justify-content: center;
     align-content: start;
 }
@@ -64,7 +64,37 @@ $row-height: 8vh;
 .tile {
     height: $row-height;
     width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-content: end;
+    justify-content: center;
 }
+
+.edit {
+    grid-column: 2/3;
+    grid-row: 1/4;
+}
+
+.tile-grid {
+    overflow: hidden;
+    padding-left: 10px;
+    display: grid;
+    height: $row-height;
+    grid-template-columns: repeat(auto-fit, minmax(3.1%, 1fr));
+    grid-gap: 1px;
+    align-content: center;
+  }
+  
+  .date-grid {
+    overflow: hidden;
+    padding-left: 10px;
+    height: 100%;
+    display: grid;  
+    grid-template-columns: repeat(auto-fit, minmax(3.1%, 1fr));
+    grid-gap: 1px;
+    align-content: end;
+  }
 
 .add-tile {
     height: $row-height;
@@ -76,4 +106,28 @@ $row-height: 8vh;
 
 .optimizer {
     grid-area: optimizer;
+}
+
+@media (min-width: 1025px) {
+    .responsive-font {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1025px) {
+    .responsive-font {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .dates-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1025px) {
+    .dates-text {
+        font-size: 10px;
+    }
 }

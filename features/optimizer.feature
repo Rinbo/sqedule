@@ -38,7 +38,7 @@ Feature: Optimizer send feature
   Scenario: A user clicks optimize and receives a response
     When I click on "Review"
     And I click on "Optimize"
-    Then I wait "1" seconds
+    Then I wait "2" seconds
     Then a post request should have been made to "https://ca-endpoints.herokuapp.com/api/optimizers"
     Then I wait "2" seconds
     Then I should see "November, 2018"

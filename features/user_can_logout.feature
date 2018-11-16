@@ -16,12 +16,12 @@ Feature: User can log-in
 
     Scenario: Logged in user successfully logout from setup schedule page
         Given I visit the first planning period
-        And I click on 'Log out'
+        And I click on 'Logout'
         Then I am on landing page
         And I should see 'Signed out successfully.'
 
     Scenario: Logged in user successfully logout from schedule page
         Given I visit the first planning period
-        And I click on 'Log out'
+        And I click on 'Logout'
         Then I am on landing page
         And I should see 'Signed out successfully.'
