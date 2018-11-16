@@ -31,7 +31,7 @@
   <div class="shift-patterns sqedule-border-sections">
     <div class="tile-section">
       <% @patterns.each do |pattern|%>
-        <div class="tile sqedule-border" id="<%= dom_id(pattern) %>">
+        <div class="tile sqedule-border pl-2" id="<%= dom_id(pattern) %>">
           <p><%= "#{pattern.shift_start.strftime("%H:%M")}-#{(pattern.shift_end).strftime("%H:%M")} (#{(pattern.break_length).strftime("%H:%M")})" unless pattern.shift_start.nil? || pattern.shift_end.nil? || pattern.break_length.nil? %></p>
           <p class="edit"><%= link_to "Edit shift", edit_pattern_path(pattern), remote: :true, class: "no-underline" %></p>
           <p><%= pattern.primary_role %></p>
