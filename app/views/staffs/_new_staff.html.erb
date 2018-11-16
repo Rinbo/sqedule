@@ -5,6 +5,10 @@
       <%= form.text_field :name, class: "sqedule-input"%>
       <%= form.label :shift_preference, class: "sqedule-label" %>
       <%= form.number_field :shift_preference, class: "sqedule-input" %>
+      <%= form.label :workrate, value: "Workrate (%)", class: "sqedule-label" %>  
+      <%= form.number_field :workrate, class: "sqedule-input" %> 
+      <%= form.label :employment_start, class: "sqedule-label" %>
+      <%= form.date_field :employment_start, class: "sqedule-input" %>
       <%= form.label :employment_end, class: "sqedule-label" %>
       <%= form.date_field :employment_end, class: "sqedule-input" %>
       <%= form.label :primary_role, value: "Primary Role", class: "sqedule-label" %>
