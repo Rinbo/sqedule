@@ -13,11 +13,12 @@
   <div class="staff sqedule-border-sections">
     <div class="staff-section">
       <% @staffs.each do |staff| %>
-        <div class="tile sqedule-border" id="<%= dom_id(staff) %>">
-          <p class="text-2xl"><%= staff.name%></p>
-          <p><%= staff.primary_role %></p>
-          <p><%= link_to "Edit staff", edit_staff_path(staff), remote: :true, class: "no-underline" %></p>
-        </div>
+        <a href="<%= edit_staff_path(staff) %>" data-remote="true" class="no-underline text-black">
+          <div class="tile sqedule-border" id="<%= dom_id(staff) %>">
+            <p class="text-2xl"><%= staff.name%></p>
+            <p><%= staff.primary_role %></p>
+          </div>
+        </a>
       <% end %>
       <div class="add-tile sqedule-border"><%= link_to "Add Staff", new_staff_path, remote: :true, id: "add-staff", class: "btn btn-blue text-center w-48 no-underline" %></div>
     </div>
@@ -31,11 +32,12 @@
   <div class="shift-patterns sqedule-border-sections">
     <div class="tile-section">
       <% @patterns.each do |pattern|%>
-        <div class="tile sqedule-border" id="<%= dom_id(pattern) %>">
-          <p><%= "#{pattern.shift_start.strftime("%H:%M")}-#{(pattern.shift_end).strftime("%H:%M")} (#{(pattern.break_length).strftime("%H:%M")})" unless pattern.shift_start.nil? || pattern.shift_end.nil? || pattern.break_length.nil? %></p>
-          <p><%= pattern.primary_role %></p>
-          <p><%= link_to "Edit shift", edit_pattern_path(pattern), remote: :true, class: "no-underline" %></p>
-        </div>      
+        <a href="<%= edit_pattern_path(pattern) %>" data-remote="true" class="no-underline text-black">
+          <div class="tile sqedule-border" id="<%= dom_id(pattern) %>">
+            <p><%= "#{pattern.shift_start.strftime("%H:%M")}-#{(pattern.shift_end).strftime("%H:%M")} (#{(pattern.break_length).strftime("%H:%M")})" unless pattern.shift_start.nil? || pattern.shift_end.nil? || pattern.break_length.nil? %></p>
+            <p><%= pattern.primary_role %></p>
+          </div>
+        </a>
       <% end %>
       <div class="add-tile sqedule-border"><%= link_to "Add Shift", new_pattern_path, class: "btn btn-blue text-center w-48 no-underline", remote: :true, id: "add-pattern" %></div>
     </div>
