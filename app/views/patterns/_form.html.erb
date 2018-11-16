@@ -10,7 +10,7 @@
       <%= form.label :break_length, value: "Break length (hh:mm)", class: "sqedule-label" %>
       <%= form.time_field :break_length, value: "00:00", class: "sqedule-input", id: "break-length" %>
       
-      <%= form.select :primary_role, ["Cleaning", "Selling", "Teaching"], {include_blank: 'Primary Role'}, class: "block appearance-none mt-4 bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline", id: "primary-role" %>
+      <%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: 'Primary Role'}, class: "block appearance-none mt-4 bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline", id: "primary-role" %>
       
       <%= form.submit class: "btn btn-blue mt-4" %>
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>

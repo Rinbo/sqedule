@@ -16,7 +16,9 @@ Then("I am on assignment page") do
 end
 
 Then("I choose {string} on {string}") do |choice, dropdown|
-  #find(choice).find(dropdown).select_option
-  # find(choice, 'OFF').click dropdown
   select choice, from: dropdown
+end
+
+Then('a post request should have been made to {string}') do |url|
+  expect(a_request(:post, url)).to have_been_made.times(1)
 end
