@@ -1,5 +1,5 @@
-<nav class="landing-nav">
+<nav class="landing-nav flex items-end justify-end w-full">
   <% if user_signed_in? %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-black masthead-text-black login"%>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-black mr-10 login"%>
   <% end %>
 </nav>

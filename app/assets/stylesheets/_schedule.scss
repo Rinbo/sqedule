@@ -71,6 +71,11 @@ $row-height: 5vh;
     justify-content: center;
 }
 
+.edit {
+    grid-column: 2/3;
+    grid-row: 1/4;
+}
+
 .tile-grid {
     overflow: hidden;
     padding-left: 10px;
@@ -103,9 +108,14 @@ $row-height: 5vh;
     grid-area: optimizer;
 }
 
+@media (min-width: 1025px) {
+    .responsive-font {
+        font-size: 16px;
+    }
+}
 
 @media (max-width: 1025px) {
     .responsive-font {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
