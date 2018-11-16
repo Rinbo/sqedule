@@ -1,7 +1,7 @@
 <% @date_array.each do |date| %>   
   <% shift = @shifts.select {|shift| (date == shift.date) && (shift.pattern_id == pattern.id)} %>
   <% unless shift[0].nil? %>
-    <div class="shift sqedule-border" style="background-color: <%= "#{"pink" if date.wday == 0}" %>">
+    <div class="shift" style="background-color: <%= "#{"pink" if date.wday == 0}" %>">
       <p><%= link_to shift[0].staff_req, edit_pattern_shift_path(pattern, shift), remote: true, class: "no-underline text-black p-6" %></p>
     </div>
   <% else %>

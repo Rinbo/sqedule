@@ -1,4 +1,4 @@
-$row-height: 8vh;
+$row-height: 6vh;
 
 .shift {
   display: grid;
@@ -30,7 +30,7 @@ $row-height: 8vh;
   padding-left: 10px;
   display: grid;
   height: $row-height;
-  grid-template-columns: repeat(auto-fill, 3.1%);
+  grid-template-columns: repeat(auto-fit, minmax(3.1%, 1fr));
   grid-gap: 1px;
   align-content: center;
 }
@@ -40,7 +40,7 @@ $row-height: 8vh;
   padding-left: 10px;
   height: 100%;
   display: grid;  
-  grid-template-columns: repeat(auto-fill, 3.1%);
+  grid-template-columns: repeat(auto-fit, minmax(3.1%, 1fr));
   grid-gap: 1px;
   align-content: end;
 }
