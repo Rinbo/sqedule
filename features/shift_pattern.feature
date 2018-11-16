@@ -24,7 +24,7 @@ Feature: Shift Pattern
     And I select "Manager" from "primary-role"
     And I click on "Create Pattern"
     Then I should see "New shift pattern was successfully created"
-    And I click "Edit shift" for "13:01"
+    And I click "Edit shift" for "02:01"
     And I click on "Delete shift"
     Then I should see "Shift pattern was successfully deleted."
 
