@@ -7,8 +7,8 @@
    
     </div>
   <% else %>
-    <div class="shift">
-      <p><%= link_to "+", new_staff_assignment_path(staff, assignment, date: date), remote: true, id: "#{date}_#{staff.id}", class: "#{date.wday == 0 ? "pink-shift-btn" : "shift-btn"}" %></p>
+    <div class="shift" style= "background-color: <%= "#{"pink" if date.wday == 0}" %>">
+      <%= link_to "+", new_staff_assignment_path(staff, assignment, date: date), remote: true, id: "#{date}_#{staff.id}", class: "#{date.wday == 0 ? "pink-shift-btn" : "shift-btn"}" %>
     </div>
   <% end %>
 <% end %>

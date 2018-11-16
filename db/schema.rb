@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_143555) do
+ActiveRecord::Schema.define(version: 2018_11_16_103528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2018_11_14_143555) do
     t.bigint "user_id"
     t.string "primary_role"
     t.text "roles", default: [], array: true
+    t.date "employment_start"
+    t.decimal "workrate"
     t.index ["user_id"], name: "index_staffs_on_user_id"
   end
 

@@ -1,6 +1,6 @@
 <% content_for :modal_content do %>
   <div class="container sqedule-form-container">
-    <h1 class= "text-center mt-6">Edit Shift</h1>
+    <h1 class= "text-center mt-6">Edit shift</h1>
     <%= form_with(model: [:pattern, @shift], scope: :shift, local: true, class: "sqedule-form") do |form| %>
       <% if @shift.errors.any? %>
         <div id="error_explanation">

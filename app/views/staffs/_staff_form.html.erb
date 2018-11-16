@@ -5,9 +5,14 @@
       <%= form.text_field :name, class: "sqedule-input"%>
       <%= form.label :shift_preference, class: "sqedule-label" %>
       <%= form.number_field :shift_preference, class: "sqedule-input" %>
+      <%= form.label :workrate, value: "Workrate (%)", class: "sqedule-label" %>  
+      <%= form.number_field :workrate, class: "sqedule-input" %> 
+      <%= form.label :employment_start, class: "sqedule-label" %>
+      <%= form.date_field :employment_start, class: "sqedule-input" %>
       <%= form.label :employment_end, class: "sqedule-label" %>
       <%= form.date_field :employment_end, class: "sqedule-input" %>
-      <%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: 'Primary Role'}, class: "", id: "primary-role" %>
+      <%= form.label :primary_role, value: "Primary role", class: "sqedule-label" %>      
+      <p><%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: 'Primary Role'}, class: "sqedule-input", id: "primary-role" %></p>
       <%= form.submit class: "btn btn-blue mt-4" %>
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
       <% unless @staff.id.nil? %>

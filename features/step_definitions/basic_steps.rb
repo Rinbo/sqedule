@@ -99,7 +99,6 @@ Given("I click {string} for {string}") do |link, object|
         click_on link
     end
 end
-  
 
 Given("I visit the first planning period") do
     visit schedule_path(Schedule.last)

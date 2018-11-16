@@ -5,7 +5,7 @@
       <p><%= link_to shift[0].staff_req, edit_pattern_shift_path(pattern, shift), remote: true, class: "no-underline text-black p-6" %></p>
     </div>
   <% else %>
-    <div class="shift">
+    <div class="shift" style= "background-color: <%= "#{"pink" if date.wday == 0}" %>">
       <%= render partial: "create_shift", locals: {pattern: pattern, date: date} %>      
     </div>
   <% end %>
