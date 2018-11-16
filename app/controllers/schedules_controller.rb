@@ -2,10 +2,9 @@ class SchedulesController < ApplicationController
   require 'json'
   include SchedulesHelper
   respond_to :js
-  before_action :init_optimizer_hash
+  before_action :init_optimizer_hash, only [:new, :optimizer]
   
   def optimizer
-    flash[:notice] = "Planning period is being optimized. Please wait..."
     @optimized_response =  SchedulesService.get_optimized_response(@optimizer_hash.to_json)
     
     @count = 0
@@ -33,7 +32,6 @@ class SchedulesController < ApplicationController
     else
       flash[:notice] = "No updates were made"
     end
-    @done = true
     render 'optimizer'
   end
 
