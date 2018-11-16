@@ -8,12 +8,12 @@
         <%= link_to ">", schedule_path(@next_month), class: "md:ml-1 no-underline md:text-base" unless @next_month.nil? %>
       </span>
     </div>
-    <div class="date-grid sqedule-border-tranparent"><%= render partial: 'dates' %></div>
+    <div class="date-grid"><%= render partial: 'dates' %></div>
   </div>
   <div class="staff sqedule-border-sections">
     <div class="staff-section">
       <% @staffs.each do |staff| %>
-        <div class="tile sqedule-border" id="<%= dom_id(staff) %>">
+        <div class="tile sqedule-border pl-2" id="<%= dom_id(staff) %>">
           <p><%= staff.name%></p>
           <p class="edit"><%= link_to "Edit staff", edit_staff_path(staff), remote: :true, class: "no-underline" %></p>
           <p><%= staff.primary_role %></p>          
