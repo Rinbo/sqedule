@@ -1,4 +1,4 @@
-$row-height: 6vh;
+$row-height: 5vh;
 
 .grid-container {
     display: grid;
@@ -64,6 +64,12 @@ $row-height: 6vh;
 .tile {
     height: $row-height;
     width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-content: end;
+    justify-content: center;
+    grid-column-gap: 5px;
 }
 
 .add-tile {
