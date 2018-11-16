@@ -2,10 +2,11 @@ class SchedulesController < ApplicationController
   require 'json'
   include SchedulesHelper
   respond_to :js
+  before_action :init_optimizer_hash
   
   def optimizer
     flash[:notice] = "Planning period is being optimized. Please wait..."
-    @optimized_response =  SchedulesService.get_optimized_response(params[:optimizer_hash])
+    @optimized_response =  SchedulesService.get_optimized_response(@optimizer_hash.to_json)
     
     @count = 0
     if Rails.env == 'test' || Rails.env == 'development'
@@ -37,15 +38,7 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    period_start = get_period_date(Schedule.find(request.referrer.split("/")[-1].delete("?").to_i).period)
-    period_end = period_start.end_of_month
-    shifts = Shift.where(pattern_id: current_user.patterns, date: (period_start..period_end))
-    assignments = Assignment.where(staff_id: current_user.staffs, date: (period_start..period_end))
-    @optimizer_hash = {shifts: [], assignments: [], patterns: [], staffs: []}
-    shifts.each {|shift| @optimizer_hash[:shifts].push(JSON.parse(shift.to_json))}
-    assignments.each {|assignment| @optimizer_hash[:assignments].push(JSON.parse(assignment.to_json))}
-    current_user.patterns.each {|p| @optimizer_hash[:patterns].push(JSON.parse(p.to_json))}
-    current_user.staffs.each {|s| @optimizer_hash[:staffs].push(JSON.parse(s.to_json))}
+    @optimizer_hash
   end
 
   def create
@@ -81,6 +74,18 @@ class SchedulesController < ApplicationController
 
   def schedule_params
     params.require(:schedule).permit(:period)
+  end
+
+  def init_optimizer_hash
+    period_start = get_period_date(Schedule.find(request.referrer.split("/")[-1].delete("?").to_i).period)
+    period_end = period_start.end_of_month
+    shifts = Shift.where(pattern_id: current_user.patterns, date: (period_start..period_end))
+    assignments = Assignment.where(staff_id: current_user.staffs, date: (period_start..period_end))
+    @optimizer_hash = {shifts: [], assignments: [], patterns: [], staffs: []}
+    shifts.each {|shift| @optimizer_hash[:shifts].push(JSON.parse(shift.to_json))}
+    assignments.each {|assignment| @optimizer_hash[:assignments].push(JSON.parse(assignment.to_json))}
+    current_user.patterns.each {|p| @optimizer_hash[:patterns].push(JSON.parse(p.to_json))}
+    current_user.staffs.each {|s| @optimizer_hash[:staffs].push(JSON.parse(s.to_json))}    
   end
 
   

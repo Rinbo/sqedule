@@ -69,8 +69,27 @@ $row-height: 5vh;
     grid-template-rows: 1fr 1fr;
     align-content: end;
     justify-content: center;
-    grid-column-gap: 5px;
 }
+
+.tile-grid {
+    overflow: hidden;
+    padding-left: 10px;
+    display: grid;
+    height: $row-height;
+    grid-template-columns: repeat(auto-fit, minmax(3.1%, 1fr));
+    grid-gap: 1px;
+    align-content: center;
+  }
+  
+  .date-grid {
+    overflow: hidden;
+    padding-left: 10px;
+    height: 100%;
+    display: grid;  
+    grid-template-columns: repeat(auto-fit, minmax(3.1%, 1fr));
+    grid-gap: 1px;
+    align-content: end;
+  }
 
 .add-tile {
     height: $row-height;
@@ -82,4 +101,11 @@ $row-height: 5vh;
 
 .optimizer {
     grid-area: optimizer;
+}
+
+
+@media (max-width: 1025px) {
+    .responsive-font {
+        font-size: 10px;
+    }
 }

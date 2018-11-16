@@ -1,10 +1,10 @@
 <%= render 'partials/landing_nav' %>
-<section class="grid-container">
-  <div class= "dates-header sqedule-border-sections">
+<section class="grid-container responsive-font"t>
+  <div class="dates-header sqedule-border-sections">
     <div class="sqedule-border flex items-center justify-center">
       <span>
         <%= link_to "<", schedule_path(@prev_month), class: "mr-4 month-step" unless @prev_month.nil? %>
-        <h1 class="inline-block"><%= get_period_name(@schedule.period) %></h1>        
+        <h2 class="inline-block "><%= get_period_name(@schedule.period) %></h2>        
         <%= link_to ">", schedule_path(@next_month), class: "ml-4 month-step" unless @next_month.nil? %>
       </span>
     </div>
@@ -14,7 +14,7 @@
     <div class="staff-section">
       <% @staffs.each do |staff| %>
         <div class="tile sqedule-border" id="<%= dom_id(staff) %>">
-          <p class="text-2xl"><%= staff.name%></p>
+          <p><%= staff.name%></p>
           <p><%= link_to "Edit staff", edit_staff_path(staff), remote: :true, class: "no-underline" %></p>
           <p><%= staff.primary_role %></p>          
         </div>
