@@ -6,6 +6,9 @@ RSpec.describe Staff, type: :model do
     it { is_expected.to have_db_column :name }
     it { is_expected.to have_db_column :primary_role }
     it { is_expected.to have_db_column :shift_preference }
+    it { is_expected.to have_db_column :workrate }
+    it { is_expected.to have_db_column :employment_start }
+    it { is_expected.to have_db_column :employment_end }
     it { is_expected.to have_db_column :created_at }
     it { is_expected.to have_db_column :updated_at }
     it { is_expected.to have_db_column :user_id }

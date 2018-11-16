@@ -11,11 +11,13 @@
       <%= form.date_field :employment_start, class: "sqedule-input" %>
       <%= form.label :employment_end, class: "sqedule-label" %>
       <%= form.date_field :employment_end, class: "sqedule-input" %>
-      <%= form.label :primary_role, value: "Primary Role", class: "sqedule-label" %>
-      <p><%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: false}, class: "sqedule-dropdown", id: "primary-role" %></p>
-      <%= form.submit value: "Add", class: "btn btn-blue mt-4" %>
+      <%= form.label :primary_role, value: "Primary role", class: "sqedule-label" %>      
+      <p><%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: 'Primary Role'}, class: "sqedule-input", id: "primary-role" %></p>
+      <%= form.submit class: "btn btn-blue mt-4" %>
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
-
+      <% unless @staff.id.nil? %>
+        <%= link_to "Delete staff", staff_path(@staff),  method: :delete, class: "btn btn-white" %>
+      <% end %>
     <% end %>
   </div>
 <% end %>

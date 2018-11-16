@@ -9,12 +9,13 @@
       
       <%= form.label :break_length, value: "Break length (hh:mm)", class: "sqedule-label" %>
       <%= form.time_field :break_length, value: "00:00", class: "sqedule-input", id: "break-length" %>
-
-      <%= form.label :primary_role, value: "Primary Role", class: "sqedule-label" %>
-      <p><%= form.select :primary_role, ["Selling", "Cleaning", "Teaching"], {include_blank: false}, id: "primary-role", class: "sqedule-dropdown" %></p>
-      
-      <%= form.submit value: "Create pattern", class: "btn btn-blue mt-4" %>
+      <%= form.label :primary_role, value: "Primary role", class: "sqedule-label" %>      
+      <p><%= form.select :primary_role, ["Manager", "Receptionist", "Instructor"], {include_blank: false }, class: "sqedule-dropdown", id: "primary-role" %></p>
+      <%= form.submit class: "btn btn-blue mt-4" %>
       <%= button_tag 'Cancel', id: 'cancel_modal', class: 'btn btn-white'%>
+      <% unless @pattern.id.nil? %>
+        <%= link_to "Delete shift", pattern_path(@pattern),  method: :delete, class: "btn btn-white" %>
+      <% end %>
     <% end %>
   </div>
 <% end %>
