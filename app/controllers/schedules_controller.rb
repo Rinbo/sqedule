@@ -2,7 +2,7 @@ class SchedulesController < ApplicationController
   require 'json'
   include SchedulesHelper
   respond_to :js
-  before_action :init_optimizer_hash, only [:new, :optimizer]
+  before_action :init_optimizer_hash, only: [:new, :optimizer]
   
   def optimizer
     @optimized_response =  SchedulesService.get_optimized_response(@optimizer_hash.to_json)
